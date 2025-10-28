@@ -165,17 +165,17 @@ function App() {
           {/* Key Statistics Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-800/20 border border-[#e2a9f1]/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold text-[#e2a9f1] mb-3">79.5M</div>
+              <div className="text-5xl font-bold text-[#ffffff] mb-3">79.5M</div>
               <div className="text-white font-semibold mb-2">Daily Active Users</div>
               <div className="text-sm text-gray-400">Higher than Netflix, Disney+, and HBO Max combined</div>
             </div>
             <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-500/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold text-[#e2a9f1] mb-3">2.4hrs</div>
+              <div className="text-5xl font-bold text-[#ffffff] mb-3">2.4hrs</div>
               <div className="text-white font-semibold mb-2">Average Daily Engagement</div>
               <div className="text-sm text-gray-400">2x longer than social media platforms</div>
             </div>
             <div className="bg-gradient-to-br from-green-900/30 to-green-800/20 border border-green-500/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold text-[#e2a9f1] mb-3">70%</div>
+              <div className="text-5xl font-bold text-[#ffffff] mb-3">70%</div>
               <div className="text-white font-semibold mb-2">Gen Z & Gen Alpha</div>
               <div className="text-sm text-gray-400">The most coveted demographic for brands</div>
             </div>
