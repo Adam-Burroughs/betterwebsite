@@ -156,7 +156,7 @@ function App() {
       <section id="why-roblox" className="py-20 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why us for Your Brand?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Roblox for Your Brand?</h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               The world's most powerful platform for reaching Gen Z and Gen Alpha with unmatched engagement metrics
             </p>
