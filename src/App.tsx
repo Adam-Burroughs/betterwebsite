@@ -557,7 +557,7 @@ function App() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/e.png" alt="Studio Logo" className="w-8 h-8" />
-                <span className="font-bold">Solidpath Studios</span>
+                <span className="font-bold">Solidpath</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Premium Roblox development for brands, companies, and agencies.
