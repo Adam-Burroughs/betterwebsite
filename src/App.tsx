@@ -60,7 +60,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/e.png" alt="Studio Logo" className="w-10 h-10" />
-            <span className="text-xl font-bold">Solidpath</span>
+            <span className="text-xl font-bold">Solidpath Studios</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#services" className="hover:text-[#e2a9f1] transition-colors">Services</a>
@@ -557,7 +557,7 @@ function App() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/e.png" alt="Studio Logo" className="w-8 h-8" />
-                <span className="font-bold">Solidpath</span>
+                <span className="font-bold">Solidpath Studios</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Premium Roblox development for brands, companies, and agencies.
