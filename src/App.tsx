@@ -68,6 +68,7 @@ function App() {
             <a href="#why-roblox" className="hover:text-[#e2a9f1] transition-colors">Why Roblox</a>
             <a href="#why-us" className="hover:text-[#e2a9f1] transition-colors">Why Us</a>
             <a href="#work" className="hover:text-[#e2a9f1] transition-colors">Our Work</a>
+            <a href="#faq" className="hover:text-[#e2a9f1] transition-colors">FAQs</a>
             <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-colors font-medium shadow-lg shadow-[#e2a9f1]/30">
               Get Started
             </a>
@@ -531,7 +532,7 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black via-gray-900/30 to-black">
+      <section id='faq' className="py-20 px-6 bg-gradient-to-b from-black via-gray-900/30 to-black">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Frequently Asked Questions</h2>
