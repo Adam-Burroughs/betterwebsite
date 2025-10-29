@@ -85,7 +85,7 @@ function App() {
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
               We Build
-              <span className="bg-gradient-to-r from-[#F469FF] to-purple-300 bg-clip-text text-transparent glow-text"> Experiences </span>
+              <span className="bg-gradient-to-r from-[#F469FF] to-pink-400 bg-clip-text text-transparent glow-text"> Experiences </span>
               That Matter
             </h1>
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
@@ -169,18 +169,18 @@ function App() {
 
           {/* Key Statistics Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">
-            <div className="bg-gradient-to-br from-[#0077FF]/20 to-blue-800/20 border border-[#73B3FF]/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold bg-gradient-to-b from-[#0077FF] to-blue-800 bg-clip-text text-transparent mb-3">79.5M</div>
+            <div className="bg-gradient-to-br from-[#0077FF]/20 to-blue-800/20 border border-[#73B3FF]/50 rounded-2xl p-8 text-center">
+              <div className="text-5xl font-bold bg-gradient-to-b from-[#0077FF] to-blue-700 bg-clip-text text-transparent mb-3">79.5M</div>
               <div className="text-white font-semibold mb-2">Daily Active Users</div>
               <div className="text-sm text-gray-400">Higher than Netflix, Disney+, and HBO Max combined</div>
             </div>
-            <div className="bg-gradient-to-br from-[#EA05FF]/20 to-purple-800/20 border border-[#F078FA]/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold bg-gradient-to-b from-[#EA05FF] to-purple-800 bg-clip-text text-transparent mb-3">2.4hrs</div>
+            <div className="bg-gradient-to-br from-[#EA05FF]/20 to-purple-800/20 border border-[#F078FA]/50 rounded-2xl p-8 text-center">
+              <div className="text-5xl font-bold bg-gradient-to-b from-[#EA05FF] to-purple-700 bg-clip-text text-transparent mb-3">2.4hrs</div>
               <div className="text-white font-semibold mb-2">Average Daily Engagement</div>
               <div className="text-sm text-gray-400">2x longer than social media platforms</div>
             </div>
-            <div className="bg-gradient-to-br from-[#14FF00]/20 to-green-800/20 border border-[#69FC5D]/30 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold bg-gradient-to-b from-[#14FF00] to-green-800 bg-clip-text text-transparent mb-3">70%</div>
+            <div className="bg-gradient-to-br from-[#14FF00]/20 to-green-800/20 border border-[#69FC5D]/50 rounded-2xl p-8 text-center">
+              <div className="text-5xl font-bold bg-gradient-to-b from-[#14FF00] to-green-700 bg-clip-text text-transparent mb-3">70%</div>
               <div className="text-white font-semibold mb-2">Gen Z & Gen Alpha</div>
               <div className="text-sm text-gray-400">The most coveted demographic for brands</div>
             </div>
@@ -301,7 +301,7 @@ function App() {
       <section id="why-us" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Choose Experience Studios?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Choose Solidpath Studios?</h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
               We're not just developers—we're strategic partners with proven expertise in creating high-performing branded experiences
             </p>
@@ -463,7 +463,7 @@ function App() {
                 onClick={() => setActiveProject(i)}
                 className={`p-6 rounded-xl text-left transition-all ${
                   activeProject === i
-                    ? 'bg-gradient-to-r from-[#BA00FF] to-purple-700 scale-105 shadow-lg shadow-[#BA00FF]/50'
+                    ? 'bg-gradient-to-r from-[#B914FF] to-purple-700 scale-105 shadow-lg shadow-[#BA00FF]/50'
                     : 'bg-white/5 border border-white/10 hover:bg-white/10 text-sm opacity-60'
                 }`}
               >
@@ -534,7 +534,7 @@ function App() {
       <section className="py-20 px-6 bg-gradient-to-b from-black via-gray-900/30 to-black">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Frequently Asked Questions (FAQ)</h2>
             <p className="text-gray-400 text-lg">Everything you need to know about working with us</p>
           </div>
 
@@ -611,7 +611,7 @@ function App() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:hello@experiencestudios.com"
-              className="px-8 py-4 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded-full hover:from-[#d89ae6] hover:to-purple-600 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
+              className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-600 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
             >
               <Mail className="w-5 h-5" />
               Get in Touch
