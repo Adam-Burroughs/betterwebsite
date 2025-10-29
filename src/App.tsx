@@ -118,7 +118,7 @@ function App() {
         </div>
 
         <div className="text-center mt-16 animate-bounce">
-          <ChevronDown className="w-6 h-6 mx-auto text-gray-600" />
+          <ChevronDown className="w-12 h-12 mx-auto text-gray-600" />
         </div>
       </section>
 
