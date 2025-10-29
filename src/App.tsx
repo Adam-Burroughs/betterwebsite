@@ -67,7 +67,7 @@ function App() {
             <a href="#why-roblox" className="hover:text-[#e2a9f1] transition-colors">Why Roblox</a>
             <a href="#why-us" className="hover:text-[#e2a9f1] transition-colors">Why Us</a>
             <a href="#work" className="hover:text-[#e2a9f1] transition-colors">Our Work</a>
-            <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded-full hover:from-[#d89ae6] hover:to-purple-600 transition-colors font-medium shadow-lg shadow-[#e2a9f1]/30">
+            <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-colors font-medium shadow-lg shadow-[#e2a9f1]/30">
               Get Started
             </a>
           </div>
@@ -84,7 +84,7 @@ function App() {
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
               We Build
-              <span className="bg-gradient-to-r from-[#e2a9f1] to-purple-400 bg-clip-text text-transparent glow-text"> Experiences </span>
+              <span className="bg-gradient-to-r from-[#F469FF] to-purple-300 bg-clip-text text-transparent glow-text"> Experiences </span>
               That Matter
             </h1>
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
@@ -92,7 +92,7 @@ function App() {
               corporations, and agencies to create immersive experiences that drive engagement and results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded-full hover:from-[#d89ae6] hover:to-purple-600 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30">
+              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#BA00FF]/30">
                 Start Your Project <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#work" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors font-medium">
@@ -532,7 +532,7 @@ function App() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:hello@experiencestudios.com"
-              className="px-8 py-4 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded-full hover:from-[#d89ae6] hover:to-purple-600 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
+              className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
             >
               <Mail className="w-5 h-5" />
               Get in Touch
