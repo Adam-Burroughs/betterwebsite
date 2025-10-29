@@ -454,7 +454,7 @@ function App() {
                 onClick={() => setActiveProject(i)}
                 className={`p-6 rounded-xl text-left transition-all ${
                   activeProject === i
-                    ? 'bg-gradient-to-r from-[#BA00FF] to-purple-600 scale-105 shadow-lg shadow-[#BA00FF]/50'
+                    ? 'bg-gradient-to-r from-[#BA00FF] to-purple-700 scale-105 shadow-lg shadow-[#BA00FF]/50'
                     : 'bg-white/5 border border-white/10 hover:bg-white/10 text-sm opacity-60'
                 }`}
               >
