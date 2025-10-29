@@ -82,9 +82,6 @@ function App() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <div className="inline-block px-4 py-2 bg-[#e2a9f1]/20 border border-[#e2a9f1]/30 rounded-full mb-6">
-              <span className="text-[#e2a9f1] text-sm font-medium">🎮 Premium Roblox Development Studio</span>
-            </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
               We Build
               <span className="bg-gradient-to-r from-[#e2a9f1] to-purple-400 bg-clip-text text-transparent glow-text"> Experiences </span>
@@ -457,8 +454,8 @@ function App() {
                 onClick={() => setActiveProject(i)}
                 className={`p-6 rounded-xl text-left transition-all ${
                   activeProject === i
-                    ? 'bg-gradient-to-r from-[#e2a9f1] to-purple-500 scale-105 shadow-lg shadow-[#e2a9f1]/50'
-                    : 'bg-white/5 border border-white/10 hover:bg-white/10'
+                    ? 'bg-gradient-to-r from-[#BA00FF] to-purple-600 scale-105 shadow-lg shadow-[#BA00FF]/50'
+                    : 'bg-white/5 border border-white/10 hover:bg-white/10 text-sm opacity-60'
                 }`}
               >
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
