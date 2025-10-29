@@ -123,7 +123,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section id="services" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">What We Do</h2>
@@ -289,7 +289,7 @@ function App() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section id="why-us" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Choose Experience Studios?</h2>
@@ -440,7 +440,7 @@ function App() {
       </section>
 
       {/* Featured Work Section */}
-      <section id="work" className="py-20 px-6 bg-gray-900">
+      <section id="work" className="py-20 px-6 bg-purple-950/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Featured Projects</h2>
@@ -522,7 +522,7 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section id="contact" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">Ready to Create Something Amazing?</h2>
           <p className="text-gray-400 text-lg mb-12">
