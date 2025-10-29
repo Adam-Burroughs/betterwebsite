@@ -18,9 +18,22 @@
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(226, 169, 241, 0.5),
-               0 0 40px rgba(226, 169, 241, 0.3),
-               0 0 60px rgba(226, 169, 241, 0.2);
+  text-shadow: 0 0 15px rgba(226, 169, 241, 0.3),
+               0 0 30px rgba(226, 169, 241, 0.2),
+               0 0 45px rgba(226, 169, 241, 0.1);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 html {

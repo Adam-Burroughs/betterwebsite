@@ -1,9 +1,10 @@
-import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock } from 'lucide-react';
+import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 function App() {
   const [activeProject, setActiveProject] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -123,7 +124,9 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/50">
+      <section id="services" className="py-20 px-6 relative bg-black">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/50 to-black"></div>
+        <div className="relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">What We Do</h2>
@@ -147,10 +150,15 @@ function App() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* Why Roblox Section */}
-      <section id="why-roblox" className="py-20 px-6 bg-black">
+      <section id="why-roblox" className="py-20 px-6 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#e2a9f1]/5 via-purple-900/5 to-black"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#e2a9f1]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+        <div className="relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Roblox for Your Brand?</h2>
@@ -285,6 +293,7 @@ function App() {
               </ul>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -521,8 +530,78 @@ function App() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-black via-gray-900/30 to-black">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Frequently Asked Questions</h2>
+            <p className="text-gray-400 text-lg">Everything you need to know about working with us</p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: "How long does it take to develop a Roblox experience?",
+                answer: "Most branded experiences take 6-8 weeks from concept to launch. This includes design, development, testing, and deployment. Complex projects with advanced features may take 10-12 weeks. We provide detailed timelines during the discovery phase."
+              },
+              {
+                question: "What's the typical investment range for a Roblox project?",
+                answer: "Projects typically range from $50K to $250K depending on scope, complexity, and features. This includes full design, development, testing, launch support, and initial optimization. We provide transparent, fixed-price proposals with no hidden fees."
+              },
+              {
+                question: "Do you provide ongoing support after launch?",
+                answer: "Yes! We offer comprehensive post-launch support including bug fixes, performance monitoring, content updates, and seasonal events. Most clients opt for our ongoing optimization package to continuously improve engagement and ROI."
+              },
+              {
+                question: "How do you measure success and ROI?",
+                answer: "We track key metrics including total visits, concurrent players, session duration, retention rates, conversion funnels, and user engagement. You'll receive a real-time analytics dashboard and monthly performance reports with actionable insights."
+              },
+              {
+                question: "Can you help with marketing and promoting our Roblox experience?",
+                answer: "Absolutely! We provide launch strategy, Roblox platform optimization, influencer outreach support, and promotional campaigns. We can also integrate with your existing marketing channels and coordinate with your PR team."
+              },
+              {
+                question: "What makes your studio different from other Roblox developers?",
+                answer: "We specialize in branded experiences for enterprises and agencies. Unlike general game developers, we understand marketing objectives, corporate compliance, and brand guidelines. Our team includes former brand marketers, not just developers."
+              },
+              {
+                question: "Do we own the intellectual property of the experience?",
+                answer: "Yes, you retain all IP rights to your branded experience. We provide full documentation, source code access, and can transfer everything to your internal team if needed. Your brand assets and custom content are 100% yours."
+              },
+              {
+                question: "What if we need to make changes after launch?",
+                answer: "Changes are easy! Roblox allows for live updates without downtime. Minor updates are included in your support package. Larger feature additions can be scoped as separate phases. We're here for the long term."
+              }
+            ].map((faq, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#e2a9f1]/30 transition-colors">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                >
+                  <span className="text-lg font-semibold pr-4">{faq.question}</span>
+                  {openFaq === i ? (
+                    <Minus className="w-5 h-5 text-[#e2a9f1] flex-shrink-0" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-[#e2a9f1] flex-shrink-0" />
+                  )}
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out ${
+                    openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  } overflow-hidden`}
+                >
+                  <div className="px-8 pb-6 text-gray-400 leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section id="contact" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/50">
+      <section id="contact" className="py-20 px-6 bg-black">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">Ready to Create Something Amazing?</h2>
           <p className="text-gray-400 text-lg mb-12">
@@ -532,7 +611,7 @@ function App() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:hello@experiencestudios.com"
-              className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
+              className="px-8 py-4 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded-full hover:from-[#d89ae6] hover:to-purple-600 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
             >
               <Mail className="w-5 h-5" />
               Get in Touch
