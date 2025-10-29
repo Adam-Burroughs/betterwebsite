@@ -494,8 +494,38 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-600/20 rounded-xl h-64 flex items-center justify-center border border-white/10">
-                <Gamepad2 className="w-24 h-24 text-[#e2a9f1]/50" />
+              <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-600/20 rounded-xl h-64 flex items-center justify-center border border-white/10 overflow-hidden group cursor-pointer relative">
+                <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#e2a9f1]/30 to-purple-600/30">
+                    <div className="relative w-full h-full p-8">
+                      <div className="absolute top-6 left-6 right-6 h-16 bg-white/10 rounded-lg backdrop-blur-sm flex items-center px-4 gap-3">
+                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div className="flex-1 ml-4 h-8 bg-white/5 rounded flex items-center px-3 text-xs text-gray-400">
+                          {projects[activeProject].title.toLowerCase().replace(/\s+/g, '-')}.roblox.com
+                        </div>
+                      </div>
+
+                      <div className="absolute top-28 left-6 right-6 bottom-6 bg-gradient-to-br from-gray-900/50 to-black/50 rounded-lg backdrop-blur-sm p-6 flex flex-col items-center justify-center">
+                        <Gamepad2 className="w-20 h-20 text-[#e2a9f1] mb-4" />
+                        <div className="grid grid-cols-3 gap-3 w-full mt-4">
+                          <div className="h-16 bg-white/5 rounded"></div>
+                          <div className="h-16 bg-white/5 rounded"></div>
+                          <div className="h-16 bg-white/5 rounded"></div>
+                        </div>
+                        <div className="flex gap-2 mt-4 w-full">
+                          <div className="flex-1 h-10 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded flex items-center justify-center">
+                            <Users className="w-4 h-4" />
+                          </div>
+                          <div className="flex-1 h-10 bg-white/5 rounded flex items-center justify-center">
+                            <Sparkles className="w-4 h-4" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
