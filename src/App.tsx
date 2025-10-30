@@ -669,8 +669,8 @@ function App() {
                   }`}></div>
 
                   {/* Animated Icon */}
-                  <div className={`absolute -top-8 -right-8 transition-all duration-500 ${
-                    hoveredStep === i ? 'opacity-100 icon-pop' : 'opacity-0'
+                  <div className={`absolute top-2 right-8 transition-all duration-500 ${
+                    hoveredStep === i && hoveredStep !== null ? 'opacity-100 icon-pop' : 'opacity-0'
                   }`}>
                     <div className="relative">
                       <div className="absolute inset-0 bg-[#e2a9f1] blur-xl rounded-full opacity-60"></div>
