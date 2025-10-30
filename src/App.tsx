@@ -173,8 +173,6 @@ function App() {
 
       {/* Hero Section */}
       <section id="hero" className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <ShootingStars starColor="#e2a9f1" trailColor="#c084fc" />
-        <StarsBackground starDensity={0.0002} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#e2a9f1]/10 to-transparent"></div>
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#e2a9f1]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
@@ -681,12 +679,17 @@ function App() {
                     } bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
-                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
+                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 relative ${
                       hoveredStep === i ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       i === 0 && hoveredStep === 0 ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       'text-white'
                     }`}>
                       {step.title}
+                      {i === 3 && hoveredStep === 3 && (
+                        <div className="absolute inset-0 pointer-events-none overflow-visible">
+                          <ShootingStars starColor="#e2a9f1" trailColor="#c084fc" minDelay={200} maxDelay={800} />
+                        </div>
+                      )}
                     </h3>
                     <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                       hoveredStep === i || (i === 0 && hoveredStep === 0) ? 'text-gray-300' : 'text-gray-400'
