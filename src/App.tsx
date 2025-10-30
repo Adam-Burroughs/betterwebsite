@@ -1,5 +1,6 @@
 import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { trackButtonClick, trackSectionView, trackScroll } from './analytics';
 
 function App() {
   const [activeProject, setActiveProject] = useState(0);
@@ -11,6 +12,19 @@ function App() {
 
   useEffect(() => {
     setIsLoaded(true);
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrolled / height) * 100);
+
+      if (scrollPercent === 25 || scrollPercent === 50 || scrollPercent === 75 || scrollPercent === 100) {
+        trackScroll(scrollPercent);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -21,6 +35,10 @@ function App() {
             setHasAnimated(true);
             animateCounters();
           }
+
+          if (entry.isIntersecting && entry.target.id) {
+            trackSectionView(entry.target.id);
+          }
         });
       },
       { threshold: 0.2 }
@@ -30,10 +48,14 @@ function App() {
       observer.observe(whyRobloxRef.current);
     }
 
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
     return () => {
       if (whyRobloxRef.current) {
         observer.unobserve(whyRobloxRef.current);
       }
+      sections.forEach((section) => observer.unobserve(section));
     };
   }, [hasAnimated]);
 
@@ -140,7 +162,7 @@ function App() {
             <a href="#why-us" className="hover:text-[#e2a9f1] transition-colors">Why Us</a>
             <a href="#work" className="hover:text-[#e2a9f1] transition-colors">Our Work</a>
             <a href="#faq" className="hover:text-[#e2a9f1] transition-colors">FAQs</a>
-            <a href="#contact" className="px-6 py-2 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-colors font-medium shadow-lg shadow-[#e2a9f1]/30">
+            <a href="#contact" onClick={() => trackButtonClick('Get Started', 'Navigation')} className="px-6 py-2 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-colors font-medium shadow-lg shadow-[#e2a9f1]/30">
               Get Started
             </a>
           </div>
@@ -148,7 +170,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+      <section id="hero" className="pt-32 pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e2a9f1]/10 to-transparent"></div>
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#e2a9f1]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
@@ -165,10 +187,10 @@ function App() {
               corporations, and agencies to create immersive experiences that drive engagement and results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#contact" className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#BA00FF]/30">
+              <a href="#contact" onClick={() => trackButtonClick('Start Your Project', 'Hero')} className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#BA00FF]/30">
                 Start Your Project <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="#work" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors font-medium">
+              <a href="#work" onClick={() => trackButtonClick('View Our Work', 'Hero')} className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors font-medium">
                 View Our Work
               </a>
             </div>
@@ -532,7 +554,10 @@ function App() {
             {projects.map((project, i) => (
               <button
                 key={i}
-                onClick={() => setActiveProject(i)}
+                onClick={() => {
+                  setActiveProject(i);
+                  trackButtonClick(`Project ${i + 1}`, 'Case Studies');
+                }}
                 className={`p-6 rounded-xl text-left transition-all ${
                   activeProject === i
                     ? 'bg-gradient-to-r from-[#B914FF] to-purple-700 scale-105 shadow-lg shadow-[#BA00FF]/50'
@@ -717,7 +742,10 @@ function App() {
             ].map((faq, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-[#e2a9f1]/30 transition-colors">
                 <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  onClick={() => {
+                    setOpenFaq(openFaq === i ? null : i);
+                    trackButtonClick(`FAQ ${i + 1}`, 'FAQ Section');
+                  }}
                   className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
                 >
                   <span className="text-lg font-semibold pr-4">{faq.question}</span>
