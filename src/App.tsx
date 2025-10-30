@@ -1,4 +1,4 @@
-import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink } from 'lucide-react';
+import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink, Search, Palette, Code, Rocket } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { trackButtonClick, trackSectionView, trackScroll } from './analytics';
 
@@ -647,10 +647,10 @@ function App() {
 
             <div className="grid md:grid-cols-4 gap-12">
               {[
-                { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience" },
-                { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics" },
-                { num: "03", title: "Development", desc: "Building and testing your Roblox experience" },
-                { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization" }
+                { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience", icon: Search },
+                { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics", icon: Palette },
+                { num: "03", title: "Development", desc: "Building and testing your Roblox experience", icon: Code },
+                { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization", icon: Rocket }
               ].map((step, i) => (
                 <div
                   key={i}
@@ -667,6 +667,16 @@ function App() {
                   <div className={`absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 transition-all duration-500 blur-xl ${
                     hoveredStep === i ? 'opacity-100' : i === 0 && hoveredStep === 0 ? 'opacity-100' : 'opacity-0'
                   }`}></div>
+
+                  {/* Animated Icon */}
+                  <div className={`absolute -top-8 -left-8 transition-all duration-500 ${
+                    hoveredStep === i ? 'opacity-100 icon-pop' : 'opacity-0'
+                  }`}>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-[#e2a9f1] blur-xl rounded-full opacity-60"></div>
+                      <step.icon className="relative w-16 h-16 text-[#e2a9f1] drop-shadow-[0_0_15px_rgba(226,169,241,0.9)]" strokeWidth={1.5} />
+                    </div>
+                  </div>
 
                   {/* Content */}
                   <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
