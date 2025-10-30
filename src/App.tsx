@@ -8,6 +8,7 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(0);
+  const [showFirework, setShowFirework] = useState(false);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -655,8 +656,14 @@ function App() {
                 <div
                   key={i}
                   className="relative group cursor-pointer"
-                  onMouseEnter={() => setHoveredStep(i)}
-                  onMouseLeave={() => setHoveredStep(0)}
+                  onMouseEnter={() => {
+                    setHoveredStep(i);
+                    if (i === 3) setShowFirework(true);
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredStep(0);
+                    if (i === 3) setShowFirework(false);
+                  }}
                 >
                   {/* Spotlight Effect */}
                   <div className={`absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent transition-all duration-700 blur-3xl ${
@@ -667,6 +674,19 @@ function App() {
                   <div className={`absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 transition-all duration-500 blur-xl ${
                     hoveredStep === i ? 'opacity-100' : i === 0 && hoveredStep === 0 ? 'opacity-100' : 'opacity-0'
                   }`}></div>
+
+                  {/* Firework Effect for Step 04 */}
+                  {i === 3 && showFirework && (
+                    <div className="firework-container">
+                      <div className="firework-rocket"></div>
+                      <div className="firework-trail"></div>
+                      <div className="firework-explosion">
+                        {[...Array(20)].map((_, idx) => (
+                          <div key={idx} className={`confetti-particle confetti-particle-${idx + 1}`}></div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Content */}
                   <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
