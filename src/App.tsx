@@ -8,7 +8,6 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [confettiExploded, setConfettiExploded] = useState(false);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
@@ -661,22 +660,13 @@ function App() {
                     setHoveredStep(i);
                     if (i === 3) {
                       setConfettiExploded(false);
-                      setTimeout(() => setConfettiExploded(true), 300);
+                      setTimeout(() => setConfettiExploded(true), 700);
                     }
                   }}
                   onMouseLeave={() => {
                     setHoveredStep(0);
                     if (i === 3) {
                       setConfettiExploded(false);
-                    }
-                  }}
-                  onMouseMove={(e) => {
-                    if (i === 3) {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      setMousePosition({
-                        x: e.clientX - rect.left,
-                        y: e.clientY - rect.top
-                      });
                     }
                   }}
                 >
@@ -693,9 +683,8 @@ function App() {
                   {/* Content */}
                   <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
                     {/* Celebration effect for step 04 */}
-                    {i === 3 && hoveredStep === 3 && (
+                    {i === 3 && hoveredStep === 3 && confettiExploded && (
                       <>
-                        {/* Static confetti that always animates */}
                         <div className="celebration-confetti confetti-1"></div>
                         <div className="celebration-confetti confetti-2"></div>
                         <div className="celebration-confetti confetti-3"></div>
@@ -706,21 +695,16 @@ function App() {
                         <div className="celebration-confetti confetti-8"></div>
                         <div className="celebration-confetti confetti-9"></div>
                         <div className="celebration-confetti confetti-10"></div>
-                        {/* Mouse-following confetti after explosion */}
-                        {confettiExploded && (
-                          <>
-                            <div className="celebration-confetti confetti-11" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-12" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-13" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-14" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-15" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-16" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-17" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-18" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-19" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                            <div className="celebration-confetti confetti-20" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                          </>
-                        )}
+                        <div className="celebration-confetti confetti-11"></div>
+                        <div className="celebration-confetti confetti-12"></div>
+                        <div className="celebration-confetti confetti-13"></div>
+                        <div className="celebration-confetti confetti-14"></div>
+                        <div className="celebration-confetti confetti-15"></div>
+                        <div className="celebration-confetti confetti-16"></div>
+                        <div className="celebration-confetti confetti-17"></div>
+                        <div className="celebration-confetti confetti-18"></div>
+                        <div className="celebration-confetti confetti-19"></div>
+                        <div className="celebration-confetti confetti-20"></div>
                       </>
                     )}
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
