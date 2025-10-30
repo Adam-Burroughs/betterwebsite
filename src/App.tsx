@@ -22,7 +22,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (whyRobloxRef.current) {
