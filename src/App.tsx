@@ -8,7 +8,6 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(0);
-  const [confettiExploded, setConfettiExploded] = useState(false);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -656,18 +655,8 @@ function App() {
                 <div
                   key={i}
                   className="relative group cursor-pointer"
-                  onMouseEnter={() => {
-                    setHoveredStep(i);
-                    if (i === 3) {
-                      setConfettiExploded(true);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredStep(0);
-                    if (i === 3) {
-                      setConfettiExploded(false);
-                    }
-                  }}
+                  onMouseEnter={() => setHoveredStep(i)}
+                  onMouseLeave={() => setHoveredStep(0)}
                 >
                   {/* Spotlight Effect */}
                   <div className={`absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent transition-all duration-700 blur-3xl ${
@@ -694,31 +683,6 @@ function App() {
                       'text-white'
                     }`}>
                       {step.title}
-                      {/* Celebration effect for step 04 */}
-                      {i === 3 && hoveredStep === 3 && confettiExploded && (
-                        <>
-                          <div className="celebration-confetti confetti-1"></div>
-                          <div className="celebration-confetti confetti-2"></div>
-                          <div className="celebration-confetti confetti-3"></div>
-                          <div className="celebration-confetti confetti-4"></div>
-                          <div className="celebration-confetti confetti-5"></div>
-                          <div className="celebration-confetti confetti-6"></div>
-                          <div className="celebration-confetti confetti-7"></div>
-                          <div className="celebration-confetti confetti-8"></div>
-                          <div className="celebration-confetti confetti-9"></div>
-                          <div className="celebration-confetti confetti-10"></div>
-                          <div className="celebration-confetti confetti-11"></div>
-                          <div className="celebration-confetti confetti-12"></div>
-                          <div className="celebration-confetti confetti-13"></div>
-                          <div className="celebration-confetti confetti-14"></div>
-                          <div className="celebration-confetti confetti-15"></div>
-                          <div className="celebration-confetti confetti-16"></div>
-                          <div className="celebration-confetti confetti-17"></div>
-                          <div className="celebration-confetti confetti-18"></div>
-                          <div className="celebration-confetti confetti-19"></div>
-                          <div className="celebration-confetti confetti-20"></div>
-                        </>
-                      )}
                     </h3>
                     <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                       hoveredStep === i || (i === 0 && hoveredStep === 0) ? 'text-gray-300' : 'text-gray-400'
