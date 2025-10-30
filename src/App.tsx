@@ -8,6 +8,7 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -657,6 +658,15 @@ function App() {
                   className="relative group cursor-pointer"
                   onMouseEnter={() => setHoveredStep(i)}
                   onMouseLeave={() => setHoveredStep(0)}
+                  onMouseMove={(e) => {
+                    if (i === 3) {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      setMousePosition({
+                        x: e.clientX - rect.left,
+                        y: e.clientY - rect.top
+                      });
+                    }
+                  }}
                 >
                   {/* Spotlight Effect */}
                   <div className={`absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent transition-all duration-700 blur-3xl ${
@@ -673,28 +683,27 @@ function App() {
                     {/* Celebration effect for step 04 */}
                     {i === 3 && hoveredStep === 3 && (
                       <>
-                        <div className="celebration-confetti confetti-1"></div>
-                        <div className="celebration-confetti confetti-2"></div>
-                        <div className="celebration-confetti confetti-3"></div>
-                        <div className="celebration-confetti confetti-4"></div>
-                        <div className="celebration-confetti confetti-5"></div>
-                        <div className="celebration-confetti confetti-6"></div>
-                        <div className="celebration-confetti confetti-7"></div>
-                        <div className="celebration-confetti confetti-8"></div>
-                        <div className="celebration-confetti confetti-9"></div>
-                        <div className="celebration-confetti confetti-10"></div>
-                        <div className="celebration-confetti confetti-11"></div>
-                        <div className="celebration-confetti confetti-12"></div>
-                        <div className="celebration-confetti confetti-13"></div>
-                        <div className="celebration-confetti confetti-14"></div>
-                        <div className="celebration-confetti confetti-15"></div>
-                        <div className="celebration-confetti confetti-16"></div>
-                        <div className="celebration-confetti confetti-17"></div>
-                        <div className="celebration-confetti confetti-18"></div>
-                        <div className="celebration-confetti confetti-19"></div>
-                        <div className="celebration-confetti confetti-20"></div>
-                        <div className="celebration-glow"></div>
-                        <div className="celebration-shake"></div>
+                        <div className="celebration-confetti confetti-1" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-2" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-3" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-4" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-5" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-6" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-7" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-8" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-9" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-10" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-11" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-12" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-13" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-14" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-15" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-16" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-17" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-18" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-19" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-confetti confetti-20" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        <div className="celebration-glow" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
                       </>
                     )}
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
