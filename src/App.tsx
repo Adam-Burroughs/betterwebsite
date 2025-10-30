@@ -369,7 +369,7 @@ function App() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
+      <section id="why-us" className="py-20 px-6 bg-gradient-to-b from-black via-black to-purple-950/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Choose Solidpath Studios?</h2>
@@ -520,7 +520,7 @@ function App() {
       </section>
 
       {/* Featured Work Section */}
-      <section id="work" className="py-20 px-6 bg-purple-950/20">
+      <section id="work" className="py-20 px-6 bg-gradient-to-b from-purple-950/20 via-purple-950/20 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Featured Projects</h2>
