@@ -46,66 +46,40 @@ body {
   margin: 0;
 }
 
-/* Shooting star trail effect */
-.shooting-star {
+/* Celebration effect */
+.celebration-confetti {
   position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
   pointer-events: none;
-}
-
-.trail-particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
   opacity: 0;
-  pointer-events: none;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  animation: particle-trail 0.6s ease-out calc(var(--delay)) infinite;
-  box-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
 }
 
-@keyframes particle-trail {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(0px);
-  }
-  10% {
-    opacity: 0.8;
+.celebration-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(226, 169, 241, 0.15) 0%, transparent 70%);
+  animation: celebration-pulse 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes celebration-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
   }
   50% {
-    opacity: 0.4;
-    filter: blur(1px);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
-    filter: blur(3px);
+    transform: scale(1.2);
+    opacity: 0.6;
   }
 }
 
-/* Star 1 */
-.shooting-star-1 {
-  top: -48px;
-  left: 0;
-  color: #e2a9f1;
-  animation: shoot-1 2s ease-out infinite;
-}
-
-.shooting-star-1::before {
-  transform-origin: right center;
-  right: 12px;
-  top: 6px;
-  transform: rotate(26.5deg) scaleX(0);
-}
-
-@keyframes shoot-1 {
+@keyframes confetti-fall {
   0% {
-    transform: translate(0, 0);
     opacity: 0;
+    transform: translateY(0) rotate(0deg);
   }
   10% {
     opacity: 1;
@@ -114,139 +88,86 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(120px, -60px);
     opacity: 0;
+    transform: translateY(var(--fall-distance)) rotate(var(--rotation));
   }
 }
 
-/* Star 2 */
-.shooting-star-2 {
+.confetti-1 {
+  top: -30px;
+  left: 20%;
+  background: linear-gradient(135deg, #e2a9f1 0%, #c084fc 100%);
+  animation: confetti-fall 2s ease-in-out infinite;
+  --fall-distance: 100px;
+  --rotation: 180deg;
+}
+
+.confetti-2 {
+  top: -25px;
+  left: 80%;
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  animation: confetti-fall 2.2s ease-in-out infinite;
+  --fall-distance: 90px;
+  --rotation: -200deg;
+  animation-delay: 0.1s;
+}
+
+.confetti-3 {
+  top: -35px;
+  left: 50%;
+  background: linear-gradient(135deg, #e2a9f1 0%, #d8b4fe 100%);
+  animation: confetti-fall 2.4s ease-in-out infinite;
+  --fall-distance: 110px;
+  --rotation: 220deg;
+  animation-delay: 0.2s;
+}
+
+.confetti-4 {
+  top: -20px;
+  right: 15%;
+  background: linear-gradient(135deg, #d8b4fe 0%, #e2a9f1 100%);
+  animation: confetti-fall 2.1s ease-in-out infinite;
+  --fall-distance: 95px;
+  --rotation: -190deg;
+  animation-delay: 0.15s;
+}
+
+.confetti-5 {
+  top: -40px;
+  left: 35%;
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  animation: confetti-fall 2.3s ease-in-out infinite;
+  --fall-distance: 105px;
+  --rotation: 210deg;
+  animation-delay: 0.25s;
+}
+
+.confetti-6 {
+  top: -28px;
+  left: 65%;
+  background: linear-gradient(135deg, #e2a9f1 0%, #a855f7 100%);
+  animation: confetti-fall 2.5s ease-in-out infinite;
+  --fall-distance: 85px;
+  --rotation: -175deg;
+  animation-delay: 0.05s;
+}
+
+.confetti-7 {
   top: -32px;
-  right: 48px;
-  color: #c084fc;
-  animation: shoot-2 2.5s ease-out infinite;
+  left: 10%;
+  background: linear-gradient(135deg, #c084fc 0%, #d8b4fe 100%);
+  animation: confetti-fall 2.15s ease-in-out infinite;
+  --fall-distance: 92px;
+  --rotation: 195deg;
+  animation-delay: 0.3s;
 }
 
-.shooting-star-2::before {
-  transform-origin: right center;
-  right: 8px;
-  top: 4px;
-  transform: rotate(-38.2deg) scaleX(0);
-  animation-duration: 2.5s;
-}
-
-@keyframes shoot-2 {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-100px, 80px);
-    opacity: 0;
-  }
-}
-
-/* Star 3 */
-.shooting-star-3 {
-  top: 0;
-  right: -32px;
-  color: #e2a9f1;
-  animation: shoot-3 2.2s ease-out infinite;
-}
-
-.shooting-star-3::before {
-  transform-origin: right center;
-  right: 12px;
-  top: 6px;
-  transform: rotate(25deg) scaleX(0);
-  animation-duration: 2.2s;
-}
-
-@keyframes shoot-3 {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(150px, 70px);
-    opacity: 0;
-  }
-}
-
-/* Star 4 */
-.shooting-star-4 {
-  bottom: -32px;
-  left: 32px;
-  color: #d8b4fe;
-  animation: shoot-4 2.8s ease-out infinite;
-}
-
-.shooting-star-4::before {
-  transform-origin: right center;
-  right: 8px;
-  top: 4px;
-  transform: rotate(-48deg) scaleX(0);
-  animation-duration: 2.8s;
-}
-
-@keyframes shoot-4 {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-90px, -100px);
-    opacity: 0;
-  }
-}
-
-/* Star 5 */
-.shooting-star-5 {
-  bottom: 16px;
-  left: -48px;
-  color: #e2a9f1;
-  animation: shoot-5 2.3s ease-out infinite;
-}
-
-.shooting-star-5::before {
-  transform-origin: right center;
-  right: 12px;
-  top: 6px;
-  transform: rotate(21deg) scaleX(0);
-  animation-duration: 2.3s;
-}
-
-@keyframes shoot-5 {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(130px, 50px);
-    opacity: 0;
-  }
+.confetti-8 {
+  top: -38px;
+  right: 25%;
+  background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
+  animation: confetti-fall 2.35s ease-in-out infinite;
+  --fall-distance: 100px;
+  --rotation: -185deg;
+  animation-delay: 0.12s;
 }
