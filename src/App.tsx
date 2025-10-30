@@ -331,19 +331,21 @@ function App() {
                 <li className="flex items-start gap-2">
                   <div className="text-[#e2a9f1] mt-1">•</div>
                   <div className="flex items-center gap-2">
-                    <a href="https://www.roblox.com/games/6536946806/NIKELAND" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2a9f1] transition-colors flex items-center gap-1">
-                      Nike's Nikeland: 25M+ visits in first 5 months
-                      <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3 h-3 text-[#e2a9f1] flex-shrink-0" />
+                    <a href="https://www.roblox.com/games/6536946806/NIKELAND" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2a9f1] transition-colors">
+                      Nike's Nikeland
                     </a>
+                    <span>: 25M+ visits in first 5 months</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="text-[#e2a9f1] mt-1">•</div>
                   <div className="flex items-center gap-2">
-                    <a href="https://www.roblox.com/games/6691754231/Gucci-Town" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2a9f1] transition-colors flex items-center gap-1">
-                      Gucci Garden: 20M+ visits, generated significant PR value
-                      <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3 h-3 text-[#e2a9f1] flex-shrink-0" />
+                    <a href="https://www.roblox.com/games/6691754231/Gucci-Town" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2a9f1] transition-colors">
+                      Gucci Garden
                     </a>
+                    <span>: 20M+ visits, generated significant PR value</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
