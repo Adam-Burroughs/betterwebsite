@@ -1,14 +1,78 @@
 import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function App() {
   const [activeProject, setActiveProject] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCounters();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (whyRobloxRef.current) {
+      observer.observe(whyRobloxRef.current);
+    }
+
+    return () => {
+      if (whyRobloxRef.current) {
+        observer.unobserve(whyRobloxRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateCounters = () => {
+    const counters = [
+      { id: 'dau-counter', start: 1, end: 79.5, suffix: 'M', duration: 2000 },
+      { id: 'engagement-counter', start: 0.1, end: 2.4, suffix: 'hrs', duration: 2000 },
+      { id: 'genz-counter', start: 1, end: 70, suffix: '%', duration: 2000 },
+      { id: 'countries-counter', start: 1, end: 180, suffix: '+', duration: 2000 },
+      { id: 'hours-counter', start: 1, end: 14, suffix: 'B', duration: 2000 },
+      { id: 'growth-counter', start: 1, end: 54, suffix: '%', duration: 2000 },
+      { id: 'earnings-counter', start: 0.1, end: 3, suffix: 'B', duration: 2000 },
+    ];
+
+    counters.forEach(({ id, start, end, suffix, duration }) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+
+      const startTime = Date.now();
+      const range = end - start;
+
+      const updateCounter = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+        const current = start + range * easeOutQuad;
+
+        const formatted = current >= 10 ? current.toFixed(0) : current.toFixed(1);
+        element.textContent = formatted + (suffix.startsWith('B') || suffix.startsWith('M') ? '' : '') + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = end + suffix;
+        }
+      };
+
+      updateCounter();
+    });
+  };
 
   const projects = [
     {
@@ -160,7 +224,7 @@ function App() {
       </section>
 
       {/* Why Roblox Section */}
-      <section id="why-roblox" className="py-20 px-6 bg-black relative overflow-hidden">
+      <section id="why-roblox" ref={whyRobloxRef} className="py-20 px-6 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#e2a9f1]/5 via-purple-900/5 to-black"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#e2a9f1]/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
@@ -176,17 +240,17 @@ function App() {
           {/* Key Statistics Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             <div className="bg-gradient-to-br from-[#0077FF]/20 to-blue-800/20 border border-[#73B3FF]/50 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold bg-gradient-to-b from-[#0077FF] to-blue-700 bg-clip-text text-transparent mb-3">79.5M</div>
+              <div id="dau-counter" className="text-5xl font-bold bg-gradient-to-b from-[#0077FF] to-blue-700 bg-clip-text text-transparent mb-3">1M</div>
               <div className="text-white font-semibold mb-2">Daily Active Users</div>
               <div className="text-sm text-gray-400">Higher than Netflix, Disney+, and HBO Max combined</div>
             </div>
             <div className="bg-gradient-to-br from-[#EA05FF]/20 to-purple-800/20 border border-[#F078FA]/50 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold bg-gradient-to-b from-[#EA05FF] to-purple-700 bg-clip-text text-transparent mb-3">2.4hrs</div>
+              <div id="engagement-counter" className="text-5xl font-bold bg-gradient-to-b from-[#EA05FF] to-purple-700 bg-clip-text text-transparent mb-3">0.1hrs</div>
               <div className="text-white font-semibold mb-2">Average Daily Engagement</div>
               <div className="text-sm text-gray-400">2x longer than social media platforms</div>
             </div>
             <div className="bg-gradient-to-br from-[#14FF00]/20 to-green-800/20 border border-[#69FC5D]/50 rounded-2xl p-8 text-center">
-              <div className="text-5xl font-bold bg-gradient-to-b from-[#14FF00] to-green-700 bg-clip-text text-transparent mb-3">70%</div>
+              <div id="genz-counter" className="text-5xl font-bold bg-gradient-to-b from-[#14FF00] to-green-700 bg-clip-text text-transparent mb-3">1%</div>
               <div className="text-white font-semibold mb-2">Gen Z & Gen Alpha</div>
               <div className="text-sm text-gray-400">The most coveted demographic for brands</div>
             </div>
@@ -195,14 +259,14 @@ function App() {
           {/* Additional Stats */}
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             {[
-              { icon: <Globe className="w-8 h-8" />, value: "180+", label: "Countries", desc: "Global reach" },
-              { icon: <Clock className="w-8 h-8" />, value: "14B", label: "Hours/Quarter", desc: "Total engagement" },
-              { icon: <Users className="w-8 h-8" />, value: "54%", label: "User Growth", desc: "Year-over-year" },
-              { icon: <TrendingUp className="w-8 h-8" />, value: "$3B", label: "Developer Earnings", desc: "Paid out annually" }
+              { icon: <Globe className="w-8 h-8" />, value: "180+", label: "Countries", desc: "Global reach", id: "countries-counter" },
+              { icon: <Clock className="w-8 h-8" />, value: "14B", label: "Hours/Quarter", desc: "Total engagement", id: "hours-counter" },
+              { icon: <Users className="w-8 h-8" />, value: "54%", label: "User Growth", desc: "Year-over-year", id: "growth-counter" },
+              { icon: <TrendingUp className="w-8 h-8" />, value: "$3B", label: "Developer Earnings", desc: "Paid out annually", id: "earnings-counter" }
             ].map((stat, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all">
                 <div className="text-[#e2a9f1] mb-3">{stat.icon}</div>
-                <div className="text-3xl font-bold mb-1">{stat.value}</div>
+                <div id={stat.id} className="text-3xl font-bold mb-1">{i === 0 ? '1+' : i === 1 ? '1B' : i === 2 ? '1%' : '$0.1B'}</div>
                 <div className="text-white font-medium mb-1">{stat.label}</div>
                 <div className="text-sm text-gray-400">{stat.desc}</div>
               </div>
