@@ -669,21 +669,23 @@ function App() {
                   }`}></div>
 
                   {/* Content */}
-                  <div className="relative transition-all duration-500 group-hover:scale-110">
+                  <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
+                    {/* Shooting stars for step 04 */}
+                    {i === 3 && hoveredStep === 3 && (
+                      <>
+                        <Sparkles className="absolute -top-12 left-0 w-3 h-3 text-[#e2a9f1]/60 animate-[shoot-star-1_2s_ease-out_infinite]" />
+                        <Sparkles className="absolute -top-8 right-12 w-2 h-2 text-purple-400/50 animate-[shoot-star-2_2.5s_ease-out_infinite]" />
+                        <Sparkles className="absolute top-0 -right-8 w-3 h-3 text-[#e2a9f1]/70 animate-[shoot-star-3_2.2s_ease-out_infinite]" />
+                        <Sparkles className="absolute -bottom-8 left-8 w-2 h-2 text-purple-300/60 animate-[shoot-star-4_2.8s_ease-out_infinite]" />
+                        <Sparkles className="absolute bottom-4 -left-12 w-3 h-3 text-[#e2a9f1]/50 animate-[shoot-star-5_2.3s_ease-out_infinite]" />
+                      </>
+                    )}
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       'from-[#e2a9f1]/30 to-[#e2a9f1]/10'
                     } bg-clip-text text-transparent`}>
                       {step.num}
-                      {i === 3 && hoveredStep === 3 && (
-                        <>
-                          <Sparkles className="absolute -top-8 -right-4 w-8 h-8 text-[#e2a9f1] animate-pulse" style={{ animationDelay: '0ms' }} />
-                          <Sparkles className="absolute -top-2 right-8 w-6 h-6 text-purple-400 animate-pulse" style={{ animationDelay: '200ms' }} />
-                          <Sparkles className="absolute -bottom-4 right-0 w-7 h-7 text-[#e2a9f1] animate-pulse" style={{ animationDelay: '400ms' }} />
-                          <Sparkles className="absolute top-4 -left-6 w-5 h-5 text-purple-300 animate-pulse" style={{ animationDelay: '600ms' }} />
-                        </>
-                      )}
                     </div>
                     <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
                       hoveredStep === i ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
