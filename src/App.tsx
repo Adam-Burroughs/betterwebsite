@@ -330,11 +330,21 @@ function App() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-start gap-2">
                   <div className="text-[#e2a9f1] mt-1">•</div>
-                  <div>Nike's Nikeland: 25M+ visits in first 5 months</div>
+                  <div className="flex items-center gap-2">
+                    <a href="https://www.roblox.com/games/6536946806/NIKELAND" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2a9f1] transition-colors flex items-center gap-1">
+                      Nike's Nikeland: 25M+ visits in first 5 months
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="text-[#e2a9f1] mt-1">•</div>
-                  <div>Gucci Garden: 20M+ visits, generated significant PR value</div>
+                  <div className="flex items-center gap-2">
+                    <a href="https://www.roblox.com/games/6691754231/Gucci-Town" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2a9f1] transition-colors flex items-center gap-1">
+                      Gucci Garden: 20M+ visits, generated significant PR value
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="text-[#e2a9f1] mt-1">•</div>
