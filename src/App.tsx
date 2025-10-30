@@ -1,4 +1,4 @@
-import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus } from 'lucide-react';
+import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -15,19 +15,22 @@ function App() {
       title: "Brand Experience Hub",
       client: "Global Fashion Brand",
       description: "Immersive virtual runway and shopping experience",
-      stats: { players: "2M+", rating: "4.9/5", engagement: "18min avg" }
+      stats: { players: "2M+", rating: "4.9/5", engagement: "18min avg" },
+      url: "https://www.roblox.com/games/brand-experience-hub"
     },
     {
       title: "Corporate Training World",
       client: "Tech Corporation",
       description: "Interactive employee onboarding and team building",
-      stats: { players: "500K+", rating: "4.8/5", engagement: "25min avg" }
+      stats: { players: "500K+", rating: "4.8/5", engagement: "25min avg" },
+      url: "https://www.roblox.com/games/corporate-training-world"
     },
     {
       title: "Product Launch Event",
       client: "Automotive Company",
       description: "Virtual car reveal and test drive experience",
-      stats: { players: "1.5M+", rating: "4.9/5", engagement: "22min avg" }
+      stats: { players: "1.5M+", rating: "4.9/5", engagement: "22min avg" },
+      url: "https://www.roblox.com/games/product-launch-event"
     }
   ];
 
@@ -494,8 +497,13 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-600/20 rounded-xl h-64 flex items-center justify-center border border-white/10 overflow-hidden group cursor-pointer relative">
-                <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-110">
+              <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-600/20 rounded-xl h-64 flex items-center justify-center border border-white/10 overflow-hidden group relative">
+                <a
+                  href={projects[activeProject].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
+                >
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#e2a9f1]/30 to-purple-600/30">
                     <div className="relative w-full h-full p-8">
                       <div className="absolute top-6 left-6 right-6 h-16 bg-white/10 rounded-lg backdrop-blur-sm flex items-center px-4 gap-3">
@@ -525,7 +533,17 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
+
+                <a
+                  href={projects[activeProject].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ExternalLink className="w-5 h-5 text-gray-800" />
+                </a>
               </div>
             </div>
           </div>
