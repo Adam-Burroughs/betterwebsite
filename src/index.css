@@ -115,3 +115,55 @@ body {
     opacity: 0;
   }
 }
+
+.star-trail {
+  position: absolute;
+  height: 2px;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.star-trail-1 {
+  width: 40px;
+  background: linear-gradient(to right, #e2a9f1 0%, rgba(226, 169, 241, 0.4) 50%, transparent 100%);
+  transform: rotate(26.5deg);
+  transform-origin: right center;
+  right: 0;
+  top: 50%;
+}
+
+.star-trail-2 {
+  width: 35px;
+  background: linear-gradient(to right, #c084fc 0%, rgba(192, 132, 252, 0.3) 50%, transparent 100%);
+  transform: rotate(-38.2deg);
+  transform-origin: right center;
+  right: 0;
+  top: 50%;
+}
+
+.star-trail-3 {
+  width: 45px;
+  background: linear-gradient(to right, #e2a9f1 0%, rgba(226, 169, 241, 0.5) 50%, transparent 100%);
+  transform: rotate(25deg);
+  transform-origin: right center;
+  right: 0;
+  top: 50%;
+}
+
+.star-trail-4 {
+  width: 38px;
+  background: linear-gradient(to right, #d8b4fe 0%, rgba(216, 180, 254, 0.4) 50%, transparent 100%);
+  transform: rotate(-48deg);
+  transform-origin: right center;
+  right: 0;
+  top: 50%;
+}
+
+.star-trail-5 {
+  width: 42px;
+  background: linear-gradient(to right, #e2a9f1 0%, rgba(226, 169, 241, 0.3) 50%, transparent 100%);
+  transform: rotate(21deg);
+  transform-origin: right center;
+  right: 0;
+  top: 50%;
+}

@@ -675,31 +675,31 @@ function App() {
                       <>
                         <div className="absolute -top-12 left-0 animate-[shoot-star-1_2s_ease-out_infinite]">
                           <div className="relative">
-                            <div className="absolute w-8 h-[2px] bg-gradient-to-r from-transparent via-[#e2a9f1]/40 to-[#e2a9f1]/60 blur-[1px]" style={{ transform: 'rotate(25deg)', transformOrigin: 'right' }}></div>
+                            <div className="star-trail star-trail-1"></div>
                             <Sparkles className="relative w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
                           </div>
                         </div>
                         <div className="absolute -top-8 right-12 animate-[shoot-star-2_2.5s_ease-out_infinite]">
                           <div className="relative">
-                            <div className="absolute w-6 h-[2px] bg-gradient-to-r from-transparent via-purple-400/30 to-purple-400/50 blur-[1px]" style={{ transform: 'rotate(-35deg)', transformOrigin: 'right' }}></div>
+                            <div className="star-trail star-trail-2"></div>
                             <Sparkles className="relative w-2 h-2 text-purple-400 drop-shadow-[0_0_3px_rgba(192,132,252,0.8)]" fill="currentColor" />
                           </div>
                         </div>
                         <div className="absolute top-0 -right-8 animate-[shoot-star-3_2.2s_ease-out_infinite]">
                           <div className="relative">
-                            <div className="absolute w-10 h-[2px] bg-gradient-to-r from-transparent via-[#e2a9f1]/40 to-[#e2a9f1]/70 blur-[1px]" style={{ transform: 'rotate(20deg)', transformOrigin: 'right' }}></div>
+                            <div className="star-trail star-trail-3"></div>
                             <Sparkles className="relative w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
                           </div>
                         </div>
                         <div className="absolute -bottom-8 left-8 animate-[shoot-star-4_2.8s_ease-out_infinite]">
                           <div className="relative">
-                            <div className="absolute w-7 h-[2px] bg-gradient-to-r from-transparent via-purple-300/30 to-purple-300/60 blur-[1px]" style={{ transform: 'rotate(-40deg)', transformOrigin: 'right' }}></div>
+                            <div className="star-trail star-trail-4"></div>
                             <Sparkles className="relative w-2 h-2 text-purple-300 drop-shadow-[0_0_3px_rgba(216,180,254,0.8)]" fill="currentColor" />
                           </div>
                         </div>
                         <div className="absolute bottom-4 -left-12 animate-[shoot-star-5_2.3s_ease-out_infinite]">
                           <div className="relative">
-                            <div className="absolute w-9 h-[2px] bg-gradient-to-r from-transparent via-[#e2a9f1]/30 to-[#e2a9f1]/50 blur-[1px]" style={{ transform: 'rotate(15deg)', transformOrigin: 'right' }}></div>
+                            <div className="star-trail star-trail-5"></div>
                             <Sparkles className="relative w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
                           </div>
                         </div>
