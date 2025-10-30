@@ -681,31 +681,6 @@ function App() {
 
                   {/* Content */}
                   <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
-                    {/* Celebration effect for step 04 */}
-                    {i === 3 && hoveredStep === 3 && confettiExploded && (
-                      <>
-                        <div className="celebration-confetti confetti-1"></div>
-                        <div className="celebration-confetti confetti-2"></div>
-                        <div className="celebration-confetti confetti-3"></div>
-                        <div className="celebration-confetti confetti-4"></div>
-                        <div className="celebration-confetti confetti-5"></div>
-                        <div className="celebration-confetti confetti-6"></div>
-                        <div className="celebration-confetti confetti-7"></div>
-                        <div className="celebration-confetti confetti-8"></div>
-                        <div className="celebration-confetti confetti-9"></div>
-                        <div className="celebration-confetti confetti-10"></div>
-                        <div className="celebration-confetti confetti-11"></div>
-                        <div className="celebration-confetti confetti-12"></div>
-                        <div className="celebration-confetti confetti-13"></div>
-                        <div className="celebration-confetti confetti-14"></div>
-                        <div className="celebration-confetti confetti-15"></div>
-                        <div className="celebration-confetti confetti-16"></div>
-                        <div className="celebration-confetti confetti-17"></div>
-                        <div className="celebration-confetti confetti-18"></div>
-                        <div className="celebration-confetti confetti-19"></div>
-                        <div className="celebration-confetti confetti-20"></div>
-                      </>
-                    )}
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
@@ -713,12 +688,37 @@ function App() {
                     } bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
-                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
+                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 relative ${
                       hoveredStep === i ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       i === 0 && hoveredStep === 0 ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       'text-white'
                     }`}>
                       {step.title}
+                      {/* Celebration effect for step 04 */}
+                      {i === 3 && hoveredStep === 3 && confettiExploded && (
+                        <>
+                          <div className="celebration-confetti confetti-1"></div>
+                          <div className="celebration-confetti confetti-2"></div>
+                          <div className="celebration-confetti confetti-3"></div>
+                          <div className="celebration-confetti confetti-4"></div>
+                          <div className="celebration-confetti confetti-5"></div>
+                          <div className="celebration-confetti confetti-6"></div>
+                          <div className="celebration-confetti confetti-7"></div>
+                          <div className="celebration-confetti confetti-8"></div>
+                          <div className="celebration-confetti confetti-9"></div>
+                          <div className="celebration-confetti confetti-10"></div>
+                          <div className="celebration-confetti confetti-11"></div>
+                          <div className="celebration-confetti confetti-12"></div>
+                          <div className="celebration-confetti confetti-13"></div>
+                          <div className="celebration-confetti confetti-14"></div>
+                          <div className="celebration-confetti confetti-15"></div>
+                          <div className="celebration-confetti confetti-16"></div>
+                          <div className="celebration-confetti confetti-17"></div>
+                          <div className="celebration-confetti confetti-18"></div>
+                          <div className="celebration-confetti confetti-19"></div>
+                          <div className="celebration-confetti confetti-20"></div>
+                        </>
+                      )}
                     </h3>
                     <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                       hoveredStep === i || (i === 0 && hoveredStep === 0) ? 'text-gray-300' : 'text-gray-400'
