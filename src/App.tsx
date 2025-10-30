@@ -6,7 +6,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(0);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -631,23 +631,37 @@ function App() {
                   key={i}
                   className="relative group cursor-pointer"
                   onMouseEnter={() => setHoveredStep(i)}
-                  onMouseLeave={() => setHoveredStep(null)}
+                  onMouseLeave={() => setHoveredStep(0)}
                 >
                   {/* Spotlight Effect */}
-                  <div className="absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
+                  <div className={`absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent transition-all duration-700 blur-3xl ${
+                    hoveredStep === i ? 'opacity-100' : i === 0 && hoveredStep === 0 ? 'opacity-100' : 'opacity-0'
+                  }`}></div>
 
                   {/* Glow Ring */}
-                  <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className={`absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 transition-all duration-500 blur-xl ${
+                    hoveredStep === i ? 'opacity-100' : i === 0 && hoveredStep === 0 ? 'opacity-100' : 'opacity-0'
+                  }`}></div>
 
                   {/* Content */}
                   <div className="relative transition-all duration-500 group-hover:scale-110">
-                    <div className="text-7xl font-black bg-gradient-to-br from-[#e2a9f1]/30 to-[#e2a9f1]/10 bg-clip-text text-transparent group-hover:from-[#e2a9f1] group-hover:to-purple-400 transition-all duration-500 mb-6 group-hover:drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]">
+                    <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 ${
+                      hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
+                      i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
+                      'from-[#e2a9f1]/30 to-[#e2a9f1]/10'
+                    } bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-[#e2a9f1] transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]">
+                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
+                      hoveredStep === i ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
+                      i === 0 && hoveredStep === 0 ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
+                      'text-white'
+                    }`}>
                       {step.title}
                     </h3>
-                    <p className="text-gray-400 group-hover:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                    <p className={`text-sm leading-relaxed transition-colors duration-300 ${
+                      hoveredStep === i || (i === 0 && hoveredStep === 0) ? 'text-gray-300' : 'text-gray-400'
+                    }`}>
                       {step.desc}
                     </p>
                   </div>
