@@ -609,12 +609,15 @@ function App() {
               { num: "03", title: "Development", desc: "Building and testing your Roblox experience" },
               { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization" }
             ].map((step, i) => (
-              <div key={i} className="relative">
-                <div className="text-6xl font-bold text-[#e2a9f1]/20 mb-4">{step.num}</div>
-                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+              <div key={i} className="relative group">
+                <div className="absolute inset-0 bg-gradient-radial from-[#e2a9f1]/20 via-[#e2a9f1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl scale-150"></div>
+                <div className="relative bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-300 group-hover:border-[#e2a9f1]/50 group-hover:bg-white/10 group-hover:shadow-[0_0_30px_rgba(226,169,241,0.3)] group-hover:scale-105 group-hover:-translate-y-2">
+                  <div className="text-6xl font-bold text-[#e2a9f1]/20 group-hover:text-[#e2a9f1]/40 transition-all duration-300 mb-4">{step.num}</div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#e2a9f1] transition-colors duration-300">{step.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                </div>
                 {i < 3 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[#e2a9f1]/50 to-transparent"></div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[#e2a9f1]/50 to-transparent z-0"></div>
                 )}
               </div>
             ))}
