@@ -54,7 +54,7 @@ body {
 @keyframes iconPop {
   0% {
     opacity: 0;
-    transform: translate(-20px, -20px) scale(0) rotate(-180deg);
+    transform: translate(20px, -20px) scale(0) rotate(-180deg);
   }
   60% {
     transform: translate(0, 0) scale(1.15) rotate(10deg);

@@ -1,4 +1,4 @@
-import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink, Search, Palette, Code, Rocket } from 'lucide-react';
+import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink, Search, Wand2, Code, Rocket } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { trackButtonClick, trackSectionView, trackScroll } from './analytics';
 
@@ -648,7 +648,7 @@ function App() {
             <div className="grid md:grid-cols-4 gap-12">
               {[
                 { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience", icon: Search },
-                { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics", icon: Palette },
+                { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics", icon: Wand2 },
                 { num: "03", title: "Development", desc: "Building and testing your Roblox experience", icon: Code },
                 { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization", icon: Rocket }
               ].map((step, i) => (
@@ -669,7 +669,7 @@ function App() {
                   }`}></div>
 
                   {/* Animated Icon */}
-                  <div className={`absolute -top-8 -left-8 transition-all duration-500 ${
+                  <div className={`absolute -top-8 -right-8 transition-all duration-500 ${
                     hoveredStep === i ? 'opacity-100 icon-pop' : 'opacity-0'
                   }`}>
                     <div className="relative">
