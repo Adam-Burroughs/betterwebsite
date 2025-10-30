@@ -9,6 +9,7 @@ function App() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [confettiExploded, setConfettiExploded] = useState(false);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -656,8 +657,19 @@ function App() {
                 <div
                   key={i}
                   className="relative group cursor-pointer"
-                  onMouseEnter={() => setHoveredStep(i)}
-                  onMouseLeave={() => setHoveredStep(0)}
+                  onMouseEnter={() => {
+                    setHoveredStep(i);
+                    if (i === 3) {
+                      setConfettiExploded(false);
+                      setTimeout(() => setConfettiExploded(true), 300);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredStep(0);
+                    if (i === 3) {
+                      setConfettiExploded(false);
+                    }
+                  }}
                   onMouseMove={(e) => {
                     if (i === 3) {
                       const rect = e.currentTarget.getBoundingClientRect();
@@ -683,34 +695,39 @@ function App() {
                     {/* Celebration effect for step 04 */}
                     {i === 3 && hoveredStep === 3 && (
                       <>
-                        <div className="celebration-confetti confetti-1" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-2" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-3" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-4" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-5" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-6" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-7" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-8" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-9" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-10" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-11" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-12" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-13" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-14" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-15" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-16" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-17" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-18" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-19" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-confetti confetti-20" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
-                        <div className="celebration-glow" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                        {/* Static confetti that always animates */}
+                        <div className="celebration-confetti confetti-1"></div>
+                        <div className="celebration-confetti confetti-2"></div>
+                        <div className="celebration-confetti confetti-3"></div>
+                        <div className="celebration-confetti confetti-4"></div>
+                        <div className="celebration-confetti confetti-5"></div>
+                        <div className="celebration-confetti confetti-6"></div>
+                        <div className="celebration-confetti confetti-7"></div>
+                        <div className="celebration-confetti confetti-8"></div>
+                        <div className="celebration-confetti confetti-9"></div>
+                        <div className="celebration-confetti confetti-10"></div>
+                        {/* Mouse-following confetti after explosion */}
+                        {confettiExploded && (
+                          <>
+                            <div className="celebration-confetti confetti-11" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-12" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-13" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-14" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-15" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-16" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-17" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-18" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-19" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                            <div className="celebration-confetti confetti-20" style={{ left: `${mousePosition.x}px`, top: `${mousePosition.y}px` }}></div>
+                          </>
+                        )}
                       </>
                     )}
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       'from-[#e2a9f1]/30 to-[#e2a9f1]/10'
-                    } ${i === 3 && hoveredStep === 3 ? 'celebration-number-shake' : ''} bg-clip-text text-transparent`}>
+                    } ${i === 3 && hoveredStep === 3 && !confettiExploded ? 'celebration-number-shake' : ''} bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
                     <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
