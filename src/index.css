@@ -46,12 +46,67 @@ body {
   margin: 0;
 }
 
-@keyframes shoot-star-1 {
+/* Shooting star trail effect */
+.shooting-star {
+  position: absolute;
+  pointer-events: none;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, currentColor);
+  opacity: 0;
+  filter: blur(1px);
+  animation: trail-fade 2s ease-out infinite;
+}
+
+.star-icon {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes trail-fade {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  20% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+/* Star 1 */
+.shooting-star-1 {
+  top: -48px;
+  left: 0;
+  color: #e2a9f1;
+  animation: shoot-1 2s ease-out infinite;
+}
+
+.shooting-star-1::before {
+  transform-origin: right center;
+  right: 12px;
+  top: 6px;
+  transform: rotate(26.5deg) scaleX(0);
+}
+
+@keyframes shoot-1 {
   0% {
     transform: translate(0, 0);
     opacity: 0;
   }
   10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
@@ -60,12 +115,31 @@ body {
   }
 }
 
-@keyframes shoot-star-2 {
+/* Star 2 */
+.shooting-star-2 {
+  top: -32px;
+  right: 48px;
+  color: #c084fc;
+  animation: shoot-2 2.5s ease-out infinite;
+}
+
+.shooting-star-2::before {
+  transform-origin: right center;
+  right: 8px;
+  top: 4px;
+  transform: rotate(-38.2deg) scaleX(0);
+  animation-duration: 2.5s;
+}
+
+@keyframes shoot-2 {
   0% {
     transform: translate(0, 0);
     opacity: 0;
   }
   10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
@@ -74,12 +148,31 @@ body {
   }
 }
 
-@keyframes shoot-star-3 {
+/* Star 3 */
+.shooting-star-3 {
+  top: 0;
+  right: -32px;
+  color: #e2a9f1;
+  animation: shoot-3 2.2s ease-out infinite;
+}
+
+.shooting-star-3::before {
+  transform-origin: right center;
+  right: 12px;
+  top: 6px;
+  transform: rotate(25deg) scaleX(0);
+  animation-duration: 2.2s;
+}
+
+@keyframes shoot-3 {
   0% {
     transform: translate(0, 0);
     opacity: 0;
   }
   10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
@@ -88,12 +181,31 @@ body {
   }
 }
 
-@keyframes shoot-star-4 {
+/* Star 4 */
+.shooting-star-4 {
+  bottom: -32px;
+  left: 32px;
+  color: #d8b4fe;
+  animation: shoot-4 2.8s ease-out infinite;
+}
+
+.shooting-star-4::before {
+  transform-origin: right center;
+  right: 8px;
+  top: 4px;
+  transform: rotate(-48deg) scaleX(0);
+  animation-duration: 2.8s;
+}
+
+@keyframes shoot-4 {
   0% {
     transform: translate(0, 0);
     opacity: 0;
   }
   10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
@@ -102,7 +214,23 @@ body {
   }
 }
 
-@keyframes shoot-star-5 {
+/* Star 5 */
+.shooting-star-5 {
+  bottom: 16px;
+  left: -48px;
+  color: #e2a9f1;
+  animation: shoot-5 2.3s ease-out infinite;
+}
+
+.shooting-star-5::before {
+  transform-origin: right center;
+  right: 12px;
+  top: 6px;
+  transform: rotate(21deg) scaleX(0);
+  animation-duration: 2.3s;
+}
+
+@keyframes shoot-5 {
   0% {
     transform: translate(0, 0);
     opacity: 0;
@@ -110,60 +238,11 @@ body {
   10% {
     opacity: 1;
   }
+  90% {
+    opacity: 1;
+  }
   100% {
     transform: translate(130px, 50px);
     opacity: 0;
   }
-}
-
-.star-trail {
-  position: absolute;
-  height: 2px;
-  pointer-events: none;
-  filter: blur(1px);
-}
-
-.star-trail-1 {
-  width: 40px;
-  background: linear-gradient(to right, #e2a9f1 0%, rgba(226, 169, 241, 0.4) 50%, transparent 100%);
-  transform: rotate(26.5deg);
-  transform-origin: right center;
-  right: 0;
-  top: 50%;
-}
-
-.star-trail-2 {
-  width: 35px;
-  background: linear-gradient(to right, #c084fc 0%, rgba(192, 132, 252, 0.3) 50%, transparent 100%);
-  transform: rotate(-38.2deg);
-  transform-origin: right center;
-  right: 0;
-  top: 50%;
-}
-
-.star-trail-3 {
-  width: 45px;
-  background: linear-gradient(to right, #e2a9f1 0%, rgba(226, 169, 241, 0.5) 50%, transparent 100%);
-  transform: rotate(25deg);
-  transform-origin: right center;
-  right: 0;
-  top: 50%;
-}
-
-.star-trail-4 {
-  width: 38px;
-  background: linear-gradient(to right, #d8b4fe 0%, rgba(216, 180, 254, 0.4) 50%, transparent 100%);
-  transform: rotate(-48deg);
-  transform-origin: right center;
-  right: 0;
-  top: 50%;
-}
-
-.star-trail-5 {
-  width: 42px;
-  background: linear-gradient(to right, #e2a9f1 0%, rgba(226, 169, 241, 0.3) 50%, transparent 100%);
-  transform: rotate(21deg);
-  transform-origin: right center;
-  right: 0;
-  top: 50%;
 }

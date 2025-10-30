@@ -673,35 +673,20 @@ function App() {
                     {/* Shooting stars for step 04 */}
                     {i === 3 && hoveredStep === 3 && (
                       <>
-                        <div className="absolute -top-12 left-0 animate-[shoot-star-1_2s_ease-out_infinite]">
-                          <div className="relative">
-                            <div className="star-trail star-trail-1"></div>
-                            <Sparkles className="relative w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
-                          </div>
+                        <div className="shooting-star shooting-star-1">
+                          <Sparkles className="star-icon w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
                         </div>
-                        <div className="absolute -top-8 right-12 animate-[shoot-star-2_2.5s_ease-out_infinite]">
-                          <div className="relative">
-                            <div className="star-trail star-trail-2"></div>
-                            <Sparkles className="relative w-2 h-2 text-purple-400 drop-shadow-[0_0_3px_rgba(192,132,252,0.8)]" fill="currentColor" />
-                          </div>
+                        <div className="shooting-star shooting-star-2">
+                          <Sparkles className="star-icon w-2 h-2 text-purple-400 drop-shadow-[0_0_3px_rgba(192,132,252,0.8)]" fill="currentColor" />
                         </div>
-                        <div className="absolute top-0 -right-8 animate-[shoot-star-3_2.2s_ease-out_infinite]">
-                          <div className="relative">
-                            <div className="star-trail star-trail-3"></div>
-                            <Sparkles className="relative w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
-                          </div>
+                        <div className="shooting-star shooting-star-3">
+                          <Sparkles className="star-icon w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
                         </div>
-                        <div className="absolute -bottom-8 left-8 animate-[shoot-star-4_2.8s_ease-out_infinite]">
-                          <div className="relative">
-                            <div className="star-trail star-trail-4"></div>
-                            <Sparkles className="relative w-2 h-2 text-purple-300 drop-shadow-[0_0_3px_rgba(216,180,254,0.8)]" fill="currentColor" />
-                          </div>
+                        <div className="shooting-star shooting-star-4">
+                          <Sparkles className="star-icon w-2 h-2 text-purple-300 drop-shadow-[0_0_3px_rgba(216,180,254,0.8)]" fill="currentColor" />
                         </div>
-                        <div className="absolute bottom-4 -left-12 animate-[shoot-star-5_2.3s_ease-out_infinite]">
-                          <div className="relative">
-                            <div className="star-trail star-trail-5"></div>
-                            <Sparkles className="relative w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
-                          </div>
+                        <div className="shooting-star shooting-star-5">
+                          <Sparkles className="star-icon w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
                         </div>
                       </>
                     )}
