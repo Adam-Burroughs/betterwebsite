@@ -603,56 +603,57 @@ function App() {
             <p className="text-gray-400 text-lg">From concept to launch in 4 simple steps</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-12">
-            {[
-              { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience" },
-              { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics" },
-              { num: "03", title: "Development", desc: "Building and testing your Roblox experience" },
-              { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization" }
-            ].map((step, i) => (
-              <div
-                key={i}
-                className="relative group cursor-pointer"
-                onMouseEnter={() => setHoveredStep(i)}
-                onMouseLeave={() => setHoveredStep(null)}
-              >
-                {/* Spotlight Effect */}
-                <div className="absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
-
-                {/* Glow Ring */}
-                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-
-                {/* Content */}
-                <div className="relative transition-all duration-500 group-hover:scale-110">
-                  <div className="text-7xl font-black bg-gradient-to-br from-[#e2a9f1]/30 to-[#e2a9f1]/10 bg-clip-text text-transparent group-hover:from-[#e2a9f1] group-hover:to-purple-400 transition-all duration-500 mb-6 group-hover:drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]">
-                    {step.num}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-[#e2a9f1] transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-400 group-hover:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
-                    {step.desc}
-                  </p>
-                </div>
-
-                {/* Connecting Line */}
-                {i < 3 && (
-                  <div className="hidden md:block absolute top-12 left-full w-full h-px overflow-hidden">
-                    <div
-                      className="h-full transition-all duration-500 ease-out"
-                      style={{
-                        background: hoveredStep !== null && hoveredStep >= i ?
-                          'linear-gradient(to right, rgba(226, 169, 241, 0.8), rgba(226, 169, 241, 0.6))' :
-                          'linear-gradient(to right, rgba(226, 169, 241, 0.3), rgba(226, 169, 241, 0.2), transparent)',
-                        transform: hoveredStep !== null && hoveredStep > i ? 'scaleX(1)' : 'scaleX(0)',
-                        transformOrigin: 'left',
-                        boxShadow: hoveredStep !== null && hoveredStep >= i ? '0 0 10px rgba(226, 169, 241, 0.6)' : 'none'
-                      }}
-                    ></div>
-                  </div>
-                )}
+          <div className="relative">
+            {/* Continuous Progress Line */}
+            <div className="hidden md:block absolute top-[90px] left-0 right-0 h-1 pointer-events-none">
+              <div className="relative h-full max-w-[calc(100%-6rem)] mx-auto">
+                {/* Background line */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#e2a9f1]/20 to-[#e2a9f1]/20"></div>
+                {/* Animated progress line */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-r from-[#e2a9f1] via-[#e2a9f1]/80 to-[#e2a9f1] transition-all duration-700 ease-out"
+                  style={{
+                    width: hoveredStep !== null ? `${((hoveredStep + 1) / 4) * 100}%` : '0%',
+                    boxShadow: hoveredStep !== null ? '0 0 20px rgba(226, 169, 241, 0.8), 0 0 40px rgba(226, 169, 241, 0.4)' : 'none'
+                  }}
+                ></div>
               </div>
-            ))}
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-12">
+              {[
+                { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience" },
+                { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics" },
+                { num: "03", title: "Development", desc: "Building and testing your Roblox experience" },
+                { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization" }
+              ].map((step, i) => (
+                <div
+                  key={i}
+                  className="relative group cursor-pointer"
+                  onMouseEnter={() => setHoveredStep(i)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                >
+                  {/* Spotlight Effect */}
+                  <div className="absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
+
+                  {/* Glow Ring */}
+                  <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+
+                  {/* Content */}
+                  <div className="relative transition-all duration-500 group-hover:scale-110">
+                    <div className="text-7xl font-black bg-gradient-to-br from-[#e2a9f1]/30 to-[#e2a9f1]/10 bg-clip-text text-transparent group-hover:from-[#e2a9f1] group-hover:to-purple-400 transition-all duration-500 mb-6 group-hover:drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]">
+                      {step.num}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-[#e2a9f1] transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-400 group-hover:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
