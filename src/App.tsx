@@ -16,21 +16,24 @@ function App() {
       client: "Global Fashion Brand",
       description: "Immersive virtual runway and shopping experience",
       stats: { players: "2M+", rating: "4.9/5", engagement: "18min avg" },
-      url: "https://www.roblox.com/games/brand-experience-hub"
+      url: "https://www.roblox.com/games/brand-experience-hub",
+      image: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       title: "Corporate Training World",
       client: "Tech Corporation",
       description: "Interactive employee onboarding and team building",
       stats: { players: "500K+", rating: "4.8/5", engagement: "25min avg" },
-      url: "https://www.roblox.com/games/corporate-training-world"
+      url: "https://www.roblox.com/games/corporate-training-world",
+      image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       title: "Product Launch Event",
       client: "Automotive Company",
       description: "Virtual car reveal and test drive experience",
       stats: { players: "1.5M+", rating: "4.9/5", engagement: "22min avg" },
-      url: "https://www.roblox.com/games/product-launch-event"
+      url: "https://www.roblox.com/games/product-launch-event",
+      image: "https://images.pexels.com/photos/3822864/pexels-photo-3822864.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
 
@@ -497,52 +500,28 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-600/20 rounded-xl h-64 flex items-center justify-center border border-white/10 overflow-hidden group relative">
+              <div className="bg-gradient-to-br from-[#e2a9f1]/20 to-purple-600/20 rounded-xl h-64 overflow-hidden group relative">
                 <a
                   href={projects[activeProject].url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute inset-0 transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0"
                 >
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#e2a9f1]/30 to-purple-600/30">
-                    <div className="relative w-full h-full p-8">
-                      <div className="absolute top-6 left-6 right-6 h-16 bg-white/10 rounded-lg backdrop-blur-sm flex items-center px-4 gap-3">
-                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                        <div className="flex-1 ml-4 h-8 bg-white/5 rounded flex items-center px-3 text-xs text-gray-400">
-                          {projects[activeProject].title.toLowerCase().replace(/\s+/g, '-')}.roblox.com
-                        </div>
-                      </div>
-
-                      <div className="absolute top-28 left-6 right-6 bottom-6 bg-gradient-to-br from-gray-900/50 to-black/50 rounded-lg backdrop-blur-sm p-6 flex flex-col items-center justify-center">
-                        <Gamepad2 className="w-20 h-20 text-[#e2a9f1] mb-4" />
-                        <div className="grid grid-cols-3 gap-3 w-full mt-4">
-                          <div className="h-16 bg-white/5 rounded"></div>
-                          <div className="h-16 bg-white/5 rounded"></div>
-                          <div className="h-16 bg-white/5 rounded"></div>
-                        </div>
-                        <div className="flex gap-2 mt-4 w-full">
-                          <div className="flex-1 h-10 bg-gradient-to-r from-[#e2a9f1] to-purple-500 rounded flex items-center justify-center">
-                            <Users className="w-4 h-4" />
-                          </div>
-                          <div className="flex-1 h-10 bg-white/5 rounded flex items-center justify-center">
-                            <Sparkles className="w-4 h-4" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <img
+                    src={projects[activeProject].image}
+                    alt={projects[activeProject].title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </a>
 
                 <a
                   href={projects[activeProject].url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-4 right-4 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
+                  className="absolute top-4 right-4 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <ExternalLink className="w-5 h-5 text-gray-800" />
+                  <ExternalLink className="w-5 h-5 text-white" />
                 </a>
               </div>
             </div>
