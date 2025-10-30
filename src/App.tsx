@@ -1,8 +1,6 @@
 import { Gamepad2, Users, Briefcase, Sparkles, ArrowRight, Mail, ChevronDown, TrendingUp, Target, Award, Zap, Globe, Clock, Plus, Minus, ExternalLink } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { trackButtonClick, trackSectionView, trackScroll } from './analytics';
-import { ShootingStars } from '@/components/ui/shooting-stars';
-import { StarsBackground } from '@/components/ui/stars-background';
 
 function App() {
   const [activeProject, setActiveProject] = useState(0);
@@ -10,6 +8,7 @@ function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [hoveredStep, setHoveredStep] = useState<number | null>(0);
+  const [confettiExploded, setConfettiExploded] = useState(false);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -623,14 +622,14 @@ function App() {
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-20 px-6 bg-black overflow-visible">
-        <div className="max-w-7xl mx-auto overflow-visible">
+      <section id="process" className="py-20 px-6 bg-black">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Our Process</h2>
             <p className="text-gray-400 text-lg">From concept to launch in 4 simple steps</p>
           </div>
 
-          <div className="relative overflow-visible">
+          <div className="relative">
             {/* Continuous Progress Line */}
             <div className="hidden md:block absolute top-[90px] left-0 right-0 h-1 pointer-events-none">
               <div className="relative h-full max-w-[calc(100%-6rem)] mx-auto">
@@ -647,7 +646,7 @@ function App() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-12 overflow-visible">
+            <div className="grid md:grid-cols-4 gap-12">
               {[
                 { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience" },
                 { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics" },
@@ -656,17 +655,20 @@ function App() {
               ].map((step, i) => (
                 <div
                   key={i}
-                  className="relative group cursor-pointer overflow-visible"
-                  onMouseEnter={() => setHoveredStep(i)}
-                  onMouseLeave={() => setHoveredStep(0)}
+                  className="relative group cursor-pointer"
+                  onMouseEnter={() => {
+                    setHoveredStep(i);
+                    if (i === 3) {
+                      setConfettiExploded(true);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredStep(0);
+                    if (i === 3) {
+                      setConfettiExploded(false);
+                    }
+                  }}
                 >
-                  {/* Shooting stars for step 04 */}
-                  {i === 3 && hoveredStep === 3 && (
-                    <div className="absolute inset-0 -top-20 -bottom-20 -left-20 -right-20 pointer-events-none">
-                      <ShootingStars starColor="#e2a9f1" trailColor="#c084fc" minDelay={100} maxDelay={600} />
-                    </div>
-                  )}
-
                   {/* Spotlight Effect */}
                   <div className={`absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent transition-all duration-700 blur-3xl ${
                     hoveredStep === i ? 'opacity-100' : i === 0 && hoveredStep === 0 ? 'opacity-100' : 'opacity-0'
@@ -678,7 +680,7 @@ function App() {
                   }`}></div>
 
                   {/* Content */}
-                  <div className="relative transition-all duration-500 group-hover:scale-110">
+                  <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
@@ -686,12 +688,37 @@ function App() {
                     } bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
-                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
+                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 relative ${
                       hoveredStep === i ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       i === 0 && hoveredStep === 0 ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       'text-white'
                     }`}>
                       {step.title}
+                      {/* Celebration effect for step 04 */}
+                      {i === 3 && hoveredStep === 3 && confettiExploded && (
+                        <>
+                          <div className="celebration-confetti confetti-1"></div>
+                          <div className="celebration-confetti confetti-2"></div>
+                          <div className="celebration-confetti confetti-3"></div>
+                          <div className="celebration-confetti confetti-4"></div>
+                          <div className="celebration-confetti confetti-5"></div>
+                          <div className="celebration-confetti confetti-6"></div>
+                          <div className="celebration-confetti confetti-7"></div>
+                          <div className="celebration-confetti confetti-8"></div>
+                          <div className="celebration-confetti confetti-9"></div>
+                          <div className="celebration-confetti confetti-10"></div>
+                          <div className="celebration-confetti confetti-11"></div>
+                          <div className="celebration-confetti confetti-12"></div>
+                          <div className="celebration-confetti confetti-13"></div>
+                          <div className="celebration-confetti confetti-14"></div>
+                          <div className="celebration-confetti confetti-15"></div>
+                          <div className="celebration-confetti confetti-16"></div>
+                          <div className="celebration-confetti confetti-17"></div>
+                          <div className="celebration-confetti confetti-18"></div>
+                          <div className="celebration-confetti confetti-19"></div>
+                          <div className="celebration-confetti confetti-20"></div>
+                        </>
+                      )}
                     </h3>
                     <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                       hoveredStep === i || (i === 0 && hoveredStep === 0) ? 'text-gray-300' : 'text-gray-400'
