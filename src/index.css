@@ -49,125 +49,174 @@ body {
 /* Celebration effect */
 .celebration-confetti {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
+  width: 12px;
+  height: 12px;
   pointer-events: none;
   opacity: 0;
+  filter: blur(0.5px);
 }
 
 .celebration-glow {
   position: absolute;
-  inset: -20px;
+  inset: -30px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(226, 169, 241, 0.15) 0%, transparent 70%);
-  animation: celebration-pulse 1.5s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(226, 169, 241, 0.2) 0%, rgba(192, 132, 252, 0.1) 40%, transparent 70%);
+  animation: celebration-pulse 1.2s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes celebration-pulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.3;
+    opacity: 0.4;
   }
   50% {
-    transform: scale(1.2);
-    opacity: 0.6;
+    transform: scale(1.3);
+    opacity: 0.8;
   }
 }
 
-@keyframes confetti-fall {
+@keyframes confetti-diagonal {
   0% {
     opacity: 0;
-    transform: translateY(0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg) scale(0.5);
   }
-  10% {
+  15% {
     opacity: 1;
+    transform: translate(var(--x-move), var(--y-move)) rotate(var(--mid-rotation)) scale(1);
   }
-  90% {
+  85% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translateY(var(--fall-distance)) rotate(var(--rotation));
+    transform: translate(calc(var(--x-move) * 2), calc(var(--y-move) * 2)) rotate(var(--rotation)) scale(0.3);
   }
 }
 
 .confetti-1 {
-  top: -30px;
-  left: 20%;
-  background: linear-gradient(135deg, #e2a9f1 0%, #c084fc 100%);
-  animation: confetti-fall 2s ease-in-out infinite;
-  --fall-distance: 100px;
-  --rotation: 180deg;
+  top: -40px;
+  left: -30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e2a9f1 0%, #c084fc 100%);
+  box-shadow: 0 0 10px rgba(226, 169, 241, 0.8);
+  animation: confetti-diagonal 1.8s ease-out infinite;
+  --x-move: 80px;
+  --y-move: 80px;
+  --mid-rotation: 180deg;
+  --rotation: 360deg;
 }
 
 .confetti-2 {
-  top: -25px;
-  left: 80%;
-  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-  animation: confetti-fall 2.2s ease-in-out infinite;
-  --fall-distance: 90px;
-  --rotation: -200deg;
-  animation-delay: 0.1s;
-}
-
-.confetti-3 {
   top: -35px;
-  left: 50%;
-  background: linear-gradient(135deg, #e2a9f1 0%, #d8b4fe 100%);
-  animation: confetti-fall 2.4s ease-in-out infinite;
-  --fall-distance: 110px;
-  --rotation: 220deg;
-  animation-delay: 0.2s;
-}
-
-.confetti-4 {
-  top: -20px;
-  right: 15%;
-  background: linear-gradient(135deg, #d8b4fe 0%, #e2a9f1 100%);
-  animation: confetti-fall 2.1s ease-in-out infinite;
-  --fall-distance: 95px;
-  --rotation: -190deg;
+  left: -20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.6);
+  animation: confetti-diagonal 2s ease-out infinite;
+  --x-move: 90px;
+  --y-move: 90px;
+  --mid-rotation: 200deg;
+  --rotation: 400deg;
   animation-delay: 0.15s;
 }
 
+.confetti-3 {
+  top: -45px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e2a9f1 0%, #d8b4fe 100%);
+  box-shadow: 0 0 6px rgba(226, 169, 241, 0.7);
+  animation: confetti-diagonal 1.9s ease-out infinite;
+  --x-move: 100px;
+  --y-move: 100px;
+  --mid-rotation: 220deg;
+  --rotation: 440deg;
+  animation-delay: 0.3s;
+}
+
+.confetti-4 {
+  top: -50px;
+  left: -35px;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #d8b4fe 0%, #e2a9f1 100%);
+  box-shadow: 0 0 9px rgba(216, 180, 254, 0.7);
+  animation: confetti-diagonal 2.1s ease-out infinite;
+  --x-move: 95px;
+  --y-move: 95px;
+  --mid-rotation: -190deg;
+  --rotation: -380deg;
+  animation-delay: 0.1s;
+}
+
 .confetti-5 {
-  top: -40px;
-  left: 35%;
-  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
-  animation: confetti-fall 2.3s ease-in-out infinite;
-  --fall-distance: 105px;
-  --rotation: 210deg;
+  top: -38px;
+  left: -28px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a855f7 0%, #c084fc 100%);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+  animation: confetti-diagonal 2.2s ease-out infinite;
+  --x-move: 105px;
+  --y-move: 105px;
+  --mid-rotation: 210deg;
+  --rotation: 420deg;
   animation-delay: 0.25s;
 }
 
 .confetti-6 {
-  top: -28px;
-  left: 65%;
+  top: -42px;
+  left: -32px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
   background: linear-gradient(135deg, #e2a9f1 0%, #a855f7 100%);
-  animation: confetti-fall 2.5s ease-in-out infinite;
-  --fall-distance: 85px;
-  --rotation: -175deg;
+  box-shadow: 0 0 7px rgba(226, 169, 241, 0.6);
+  animation: confetti-diagonal 1.95s ease-out infinite;
+  --x-move: 85px;
+  --y-move: 85px;
+  --mid-rotation: -175deg;
+  --rotation: -350deg;
   animation-delay: 0.05s;
 }
 
 .confetti-7 {
-  top: -32px;
-  left: 10%;
-  background: linear-gradient(135deg, #c084fc 0%, #d8b4fe 100%);
-  animation: confetti-fall 2.15s ease-in-out infinite;
-  --fall-distance: 92px;
-  --rotation: 195deg;
-  animation-delay: 0.3s;
+  top: -48px;
+  left: -22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c084fc 0%, #d8b4fe 100%);
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.7);
+  animation: confetti-diagonal 2.05s ease-out infinite;
+  --x-move: 92px;
+  --y-move: 92px;
+  --mid-rotation: 195deg;
+  --rotation: 390deg;
+  animation-delay: 0.35s;
 }
 
 .confetti-8 {
-  top: -38px;
-  right: 25%;
+  top: -36px;
+  left: -26px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
   background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-  animation: confetti-fall 2.35s ease-in-out infinite;
-  --fall-distance: 100px;
-  --rotation: -185deg;
-  animation-delay: 0.12s;
+  box-shadow: 0 0 8px rgba(216, 180, 254, 0.6);
+  animation: confetti-diagonal 2.15s ease-out infinite;
+  --x-move: 98px;
+  --y-move: 98px;
+  --mid-rotation: -185deg;
+  --rotation: -370deg;
+  animation-delay: 0.2s;
 }
