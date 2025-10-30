@@ -602,22 +602,38 @@ function App() {
             <p className="text-gray-400 text-lg">From concept to launch in 4 simple steps</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-12">
             {[
               { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience" },
               { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics" },
               { num: "03", title: "Development", desc: "Building and testing your Roblox experience" },
               { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization" }
             ].map((step, i) => (
-              <div key={i} className="relative group">
-                <div className="absolute inset-0 bg-gradient-radial from-[#e2a9f1]/20 via-[#e2a9f1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl scale-150"></div>
-                <div className="relative bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-300 group-hover:border-[#e2a9f1]/50 group-hover:bg-white/10 group-hover:shadow-[0_0_30px_rgba(226,169,241,0.3)] group-hover:scale-105 group-hover:-translate-y-2">
-                  <div className="text-6xl font-bold text-[#e2a9f1]/20 group-hover:text-[#e2a9f1]/40 transition-all duration-300 mb-4">{step.num}</div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#e2a9f1] transition-colors duration-300">{step.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+              <div key={i} className="relative group cursor-pointer">
+                {/* Spotlight Effect */}
+                <div className="absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
+
+                {/* Glow Ring */}
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#e2a9f1]/0 via-[#e2a9f1]/20 to-[#e2a9f1]/0 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+
+                {/* Content */}
+                <div className="relative transition-all duration-500 group-hover:scale-110">
+                  <div className="text-7xl font-black bg-gradient-to-br from-[#e2a9f1]/30 to-[#e2a9f1]/10 bg-clip-text text-transparent group-hover:from-[#e2a9f1] group-hover:to-purple-400 transition-all duration-500 mb-6 group-hover:drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]">
+                    {step.num}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-[#e2a9f1] transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                    {step.desc}
+                  </p>
                 </div>
+
+                {/* Connecting Line */}
                 {i < 3 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[#e2a9f1]/50 to-transparent z-0"></div>
+                  <div className="hidden md:block absolute top-12 left-full w-full h-px">
+                    <div className="h-full bg-gradient-to-r from-[#e2a9f1]/30 via-[#e2a9f1]/20 to-transparent group-hover:from-[#e2a9f1]/60 group-hover:via-[#e2a9f1]/40 transition-all duration-500"></div>
+                  </div>
                 )}
               </div>
             ))}
