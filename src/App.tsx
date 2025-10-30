@@ -161,7 +161,7 @@ function App() {
             <a href="#why-roblox" className="hover:text-[#e2a9f1] transition-colors">Why Roblox</a>
             <a href="#why-us" className="hover:text-[#e2a9f1] transition-colors">Why Us</a>
             <a href="#work" className="hover:text-[#e2a9f1] transition-colors">Our Work</a>
-            <a href="#faq" className="hover:text-[#e2a9f1] transition-colors">FAQs</a>
+            <a href="#faq" className="hover:text-[#e2a9f1] transition-colors">FAQ</a>
             <a href="#contact" onClick={() => trackButtonClick('Get Started', 'Navigation')} className="px-6 py-2 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-400 transition-colors font-medium shadow-lg shadow-[#e2a9f1]/30">
               Get Started
             </a>
