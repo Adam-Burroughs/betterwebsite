@@ -623,14 +623,14 @@ function App() {
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-20 px-6 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section id="process" className="py-20 px-6 bg-black overflow-visible">
+        <div className="max-w-7xl mx-auto overflow-visible">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Our Process</h2>
             <p className="text-gray-400 text-lg">From concept to launch in 4 simple steps</p>
           </div>
 
-          <div className="relative">
+          <div className="relative overflow-visible">
             {/* Continuous Progress Line */}
             <div className="hidden md:block absolute top-[90px] left-0 right-0 h-1 pointer-events-none">
               <div className="relative h-full max-w-[calc(100%-6rem)] mx-auto">
@@ -647,7 +647,7 @@ function App() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-12">
+            <div className="grid md:grid-cols-4 gap-12 overflow-visible">
               {[
                 { num: "01", title: "Discovery", desc: "Understanding your brand, goals, and target audience" },
                 { num: "02", title: "Design", desc: "Creating immersive experiences and game mechanics" },
@@ -656,10 +656,17 @@ function App() {
               ].map((step, i) => (
                 <div
                   key={i}
-                  className="relative group cursor-pointer"
+                  className="relative group cursor-pointer overflow-visible"
                   onMouseEnter={() => setHoveredStep(i)}
                   onMouseLeave={() => setHoveredStep(0)}
                 >
+                  {/* Shooting stars for step 04 */}
+                  {i === 3 && hoveredStep === 3 && (
+                    <div className="absolute inset-0 -top-20 -bottom-20 -left-20 -right-20 pointer-events-none">
+                      <ShootingStars starColor="#e2a9f1" trailColor="#c084fc" minDelay={100} maxDelay={600} />
+                    </div>
+                  )}
+
                   {/* Spotlight Effect */}
                   <div className={`absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent transition-all duration-700 blur-3xl ${
                     hoveredStep === i ? 'opacity-100' : i === 0 && hoveredStep === 0 ? 'opacity-100' : 'opacity-0'
@@ -671,7 +678,7 @@ function App() {
                   }`}></div>
 
                   {/* Content */}
-                  <div className="relative transition-all duration-500 group-hover:scale-110 overflow-visible">
+                  <div className="relative transition-all duration-500 group-hover:scale-110">
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
@@ -679,17 +686,12 @@ function App() {
                     } bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
-                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 relative ${
+                    <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
                       hoveredStep === i ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       i === 0 && hoveredStep === 0 ? 'text-[#e2a9f1] drop-shadow-[0_0_10px_rgba(226,169,241,0.5)]' :
                       'text-white'
                     }`}>
                       {step.title}
-                      {i === 3 && hoveredStep === 3 && (
-                        <div className="absolute inset-0 pointer-events-none overflow-visible">
-                          <ShootingStars starColor="#e2a9f1" trailColor="#c084fc" minDelay={200} maxDelay={800} />
-                        </div>
-                      )}
                     </h3>
                     <p className={`text-sm leading-relaxed transition-colors duration-300 ${
                       hoveredStep === i || (i === 0 && hoveredStep === 0) ? 'text-gray-300' : 'text-gray-400'
