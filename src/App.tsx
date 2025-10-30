@@ -659,8 +659,7 @@ function App() {
                   onMouseEnter={() => {
                     setHoveredStep(i);
                     if (i === 3) {
-                      setConfettiExploded(false);
-                      setTimeout(() => setConfettiExploded(true), 700);
+                      setConfettiExploded(true);
                     }
                   }}
                   onMouseLeave={() => {
@@ -711,7 +710,7 @@ function App() {
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       'from-[#e2a9f1]/30 to-[#e2a9f1]/10'
-                    } ${i === 3 && hoveredStep === 3 && !confettiExploded ? 'celebration-number-shake' : ''} bg-clip-text text-transparent`}>
+                    } bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
                     <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
