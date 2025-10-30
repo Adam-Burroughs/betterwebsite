@@ -681,14 +681,27 @@ function App() {
                         <div className="celebration-confetti confetti-6"></div>
                         <div className="celebration-confetti confetti-7"></div>
                         <div className="celebration-confetti confetti-8"></div>
+                        <div className="celebration-confetti confetti-9"></div>
+                        <div className="celebration-confetti confetti-10"></div>
+                        <div className="celebration-confetti confetti-11"></div>
+                        <div className="celebration-confetti confetti-12"></div>
+                        <div className="celebration-confetti confetti-13"></div>
+                        <div className="celebration-confetti confetti-14"></div>
+                        <div className="celebration-confetti confetti-15"></div>
+                        <div className="celebration-confetti confetti-16"></div>
+                        <div className="celebration-confetti confetti-17"></div>
+                        <div className="celebration-confetti confetti-18"></div>
+                        <div className="celebration-confetti confetti-19"></div>
+                        <div className="celebration-confetti confetti-20"></div>
                         <div className="celebration-glow"></div>
+                        <div className="celebration-shake"></div>
                       </>
                     )}
                     <div className={`text-7xl font-black bg-gradient-to-br transition-all duration-500 mb-6 relative ${
                       hoveredStep === i ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       i === 0 && hoveredStep === 0 ? 'from-[#e2a9f1] to-purple-400 drop-shadow-[0_0_20px_rgba(226,169,241,0.8)]' :
                       'from-[#e2a9f1]/30 to-[#e2a9f1]/10'
-                    } bg-clip-text text-transparent`}>
+                    } ${i === 3 && hoveredStep === 3 ? 'celebration-number-shake' : ''} bg-clip-text text-transparent`}>
                       {step.num}
                     </div>
                     <h3 className={`text-2xl font-bold mb-3 transition-all duration-300 ${
