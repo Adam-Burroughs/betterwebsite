@@ -55,11 +55,13 @@ body {
 .shooting-star::before {
   content: '';
   position: absolute;
-  width: 80px;
+  width: 100px;
   height: 2px;
-  background: linear-gradient(to right, transparent, currentColor);
+  background: linear-gradient(to right, transparent 0%, currentColor 50%, transparent 100%);
+  box-shadow:
+    0 0 8px currentColor,
+    0 0 16px currentColor;
   opacity: 0;
-  filter: blur(1px);
   animation: trail-fade 2s ease-out infinite;
 }
 
@@ -71,15 +73,28 @@ body {
 @keyframes trail-fade {
   0% {
     opacity: 0;
-    transform: scaleX(0);
+    transform: scaleX(0) scaleY(1);
+    filter: blur(0px);
   }
-  20% {
-    opacity: 1;
-    transform: scaleX(1);
+  15% {
+    opacity: 0.9;
+    transform: scaleX(0.7) scaleY(1);
+    filter: blur(1px);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scaleX(1) scaleY(1.5);
+    filter: blur(2px);
+  }
+  70% {
+    opacity: 0.3;
+    transform: scaleX(1) scaleY(2);
+    filter: blur(3px);
   }
   100% {
     opacity: 0;
-    transform: scaleX(1);
+    transform: scaleX(1) scaleY(2.5);
+    filter: blur(4px);
   }
 }
 
