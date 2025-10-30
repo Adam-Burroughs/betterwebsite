@@ -674,19 +674,49 @@ function App() {
                     {i === 3 && hoveredStep === 3 && (
                       <>
                         <div className="shooting-star shooting-star-1">
-                          <Sparkles className="star-icon w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
+                          <Sparkles className="w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
+                          <span className="trail-particle" style={{'--delay': '0s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.05s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.1s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.15s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.2s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.25s'} as React.CSSProperties}></span>
                         </div>
                         <div className="shooting-star shooting-star-2">
-                          <Sparkles className="star-icon w-2 h-2 text-purple-400 drop-shadow-[0_0_3px_rgba(192,132,252,0.8)]" fill="currentColor" />
+                          <Sparkles className="w-2 h-2 text-purple-400 drop-shadow-[0_0_3px_rgba(192,132,252,0.8)]" fill="currentColor" />
+                          <span className="trail-particle" style={{'--delay': '0s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.05s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.1s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.15s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.2s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.25s'} as React.CSSProperties}></span>
                         </div>
                         <div className="shooting-star shooting-star-3">
-                          <Sparkles className="star-icon w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
+                          <Sparkles className="w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
+                          <span className="trail-particle" style={{'--delay': '0s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.05s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.1s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.15s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.2s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.25s'} as React.CSSProperties}></span>
                         </div>
                         <div className="shooting-star shooting-star-4">
-                          <Sparkles className="star-icon w-2 h-2 text-purple-300 drop-shadow-[0_0_3px_rgba(216,180,254,0.8)]" fill="currentColor" />
+                          <Sparkles className="w-2 h-2 text-purple-300 drop-shadow-[0_0_3px_rgba(216,180,254,0.8)]" fill="currentColor" />
+                          <span className="trail-particle" style={{'--delay': '0s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.05s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.1s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.15s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.2s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.25s'} as React.CSSProperties}></span>
                         </div>
                         <div className="shooting-star shooting-star-5">
-                          <Sparkles className="star-icon w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
+                          <Sparkles className="w-3 h-3 text-[#e2a9f1] drop-shadow-[0_0_4px_rgba(226,169,241,0.8)]" fill="currentColor" />
+                          <span className="trail-particle" style={{'--delay': '0s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.05s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.1s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.15s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.2s'} as React.CSSProperties}></span>
+                          <span className="trail-particle" style={{'--delay': '0.25s'} as React.CSSProperties}></span>
                         </div>
                       </>
                     )}

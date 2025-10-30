@@ -52,49 +52,38 @@ body {
   pointer-events: none;
 }
 
-.shooting-star::before {
-  content: '';
+.trail-particle {
   position: absolute;
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(to right, transparent 0%, currentColor 50%, transparent 100%);
-  box-shadow:
-    0 0 8px currentColor,
-    0 0 16px currentColor;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
   opacity: 0;
-  animation: trail-fade 2s ease-out infinite;
+  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: particle-trail 0.6s ease-out calc(var(--delay)) infinite;
+  box-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
 }
 
-.star-icon {
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes trail-fade {
+@keyframes particle-trail {
   0% {
     opacity: 0;
-    transform: scaleX(0) scaleY(1);
+    transform: translate(-50%, -50%) scale(1);
     filter: blur(0px);
   }
-  15% {
-    opacity: 0.9;
-    transform: scaleX(0.7) scaleY(1);
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
     filter: blur(1px);
-  }
-  40% {
-    opacity: 0.6;
-    transform: scaleX(1) scaleY(1.5);
-    filter: blur(2px);
-  }
-  70% {
-    opacity: 0.3;
-    transform: scaleX(1) scaleY(2);
-    filter: blur(3px);
   }
   100% {
     opacity: 0;
-    transform: scaleX(1) scaleY(2.5);
-    filter: blur(4px);
+    transform: translate(-50%, -50%) scale(2);
+    filter: blur(3px);
   }
 }
 
