@@ -6,6 +6,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const whyRobloxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -609,7 +610,12 @@ function App() {
               { num: "03", title: "Development", desc: "Building and testing your Roblox experience" },
               { num: "04", title: "Launch & Support", desc: "Deployment, marketing, and ongoing optimization" }
             ].map((step, i) => (
-              <div key={i} className="relative group cursor-pointer">
+              <div
+                key={i}
+                className="relative group cursor-pointer"
+                onMouseEnter={() => setHoveredStep(i)}
+                onMouseLeave={() => setHoveredStep(null)}
+              >
                 {/* Spotlight Effect */}
                 <div className="absolute -inset-8 bg-gradient-radial from-[#e2a9f1]/30 via-[#e2a9f1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 blur-3xl"></div>
 
@@ -631,8 +637,18 @@ function App() {
 
                 {/* Connecting Line */}
                 {i < 3 && (
-                  <div className="hidden md:block absolute top-12 left-full w-full h-px">
-                    <div className="h-full bg-gradient-to-r from-[#e2a9f1]/30 via-[#e2a9f1]/20 to-transparent group-hover:from-[#e2a9f1]/60 group-hover:via-[#e2a9f1]/40 transition-all duration-500"></div>
+                  <div className="hidden md:block absolute top-12 left-full w-full h-px overflow-hidden">
+                    <div
+                      className="h-full transition-all duration-500 ease-out"
+                      style={{
+                        background: hoveredStep !== null && hoveredStep >= i ?
+                          'linear-gradient(to right, rgba(226, 169, 241, 0.8), rgba(226, 169, 241, 0.6))' :
+                          'linear-gradient(to right, rgba(226, 169, 241, 0.3), rgba(226, 169, 241, 0.2), transparent)',
+                        transform: hoveredStep !== null && hoveredStep > i ? 'scaleX(1)' : 'scaleX(0)',
+                        transformOrigin: 'left',
+                        boxShadow: hoveredStep !== null && hoveredStep >= i ? '0 0 10px rgba(226, 169, 241, 0.6)' : 'none'
+                      }}
+                    ></div>
                   </div>
                 )}
               </div>
