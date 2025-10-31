@@ -231,17 +231,17 @@ function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Boost brand awareness", desc: "Amplify your brand's presence and reach millions of users through immersive experiences" },
-              { title: "Engage new audiences", desc: "Connect with Gen Z and Gen Alpha demographics in their favorite digital environment" },
-              { title: "Drive meaningful user interaction", desc: "Create lasting impressions through interactive gameplay and social engagement" },
-              { title: "Create custom virtual experiences", desc: "Design unique branded worlds tailored to your marketing objectives and brand identity" }
+              { title: "Boost brand awareness", desc: "Amplify your brand's presence and reach millions of users through immersive experiences", icon: <TrendingUp className="w-6 h-6" /> },
+              { title: "Engage new audiences", desc: "Connect with Gen Z and Gen Alpha demographics in their favorite digital environment", icon: <Users className="w-6 h-6" /> },
+              { title: "Drive meaningful user interaction", desc: "Create lasting impressions through interactive gameplay and social engagement", icon: <Zap className="w-6 h-6" /> },
+              { title: "Create custom virtual experiences", desc: "Design unique branded worlds tailored to your marketing objectives and brand identity", icon: <Sparkles className="w-6 h-6" /> }
             ].map((item, i) => (
               <div
                 key={i}
                 className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all hover:scale-105 group"
               >
                 <div className="w-12 h-12 bg-[#e2a9f1]/20 rounded-xl flex items-center justify-center mb-4 text-[#e2a9f1] group-hover:bg-[#e2a9f1] group-hover:text-white transition-all">
-                  <Sparkles className="w-6 h-6" />
+                  {item.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
