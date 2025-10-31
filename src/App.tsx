@@ -61,13 +61,13 @@ function App() {
 
   const animateCounters = () => {
     const counters = [
-      { id: 'dau-counter', start: 1, end: 79.5, suffix: 'M', duration: 2000 },
-      { id: 'engagement-counter', start: 0.1, end: 2.4, suffix: 'hrs', duration: 2000 },
+      { id: 'dau-counter', start: 1, end: 110.5, suffix: 'M', duration: 2000 },
+      { id: 'engagement-counter', start: 0.1, end: 2.6, suffix: 'hrs', duration: 2000 },
       { id: 'genz-counter', start: 1, end: 70, suffix: '%', duration: 2000 },
       { id: 'countries-counter', start: 1, end: 180, suffix: '+', duration: 2000 },
-      { id: 'hours-counter', start: 1, end: 14, suffix: 'B', duration: 2000 },
-      { id: 'growth-counter', start: 1, end: 54, suffix: '%', duration: 2000 },
-      { id: 'earnings-counter', start: 0.1, end: 3, suffix: 'B', duration: 2000 },
+      { id: 'hours-counter', start: 1, end: 25, suffix: 'B', duration: 2000 },
+      { id: 'growth-counter', start: 1, end: 41, suffix: '%', duration: 2000 },
+      { id: 'earnings-counter', start: 0.1, end: 1, suffix: 'B', duration: 2000 },
     ];
 
     counters.forEach(({ id, start, end, suffix, duration }) => {
@@ -99,29 +99,29 @@ function App() {
 
   const projects = [
     {
-      title: "Brand Experience Hub",
-      client: "Global Fashion Brand",
-      description: "Immersive virtual runway and shopping experience",
-      stats: { players: "2M+", rating: "4.9/5", engagement: "18min avg" },
-      url: "https://www.roblox.com/games/brand-experience-hub",
-      image: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800"
+      title: "Drive it! [2 Player Obby]",
+      client: "density",
+      description: "2 Player Car obby",
+      stats: { players: "124.1M+", rating: "95%", engagement: "18min avg" },
+      url: "https://www.roblox.com/games/100831517378953/Drive-it-2-Player-Obby",
+      image: "https://tr.rbxcdn.com/180DAY-b15d4b27bd16fabb3aa319fe90989333/768/432/Image/Webp/noFilter"
     },
     {
-      title: "Corporate Training World",
-      client: "Tech Corporation",
-      description: "Interactive employee onboarding and team building",
-      stats: { players: "500K+", rating: "4.8/5", engagement: "25min avg" },
-      url: "https://www.roblox.com/games/corporate-training-world",
-      image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800"
+      title: "[💻] Grow a Hack Empire",
+      client: "YBX Studios",
+      description: "Simulator",
+      stats: { players: "15M+", rating: "96%", engagement: "16min avg" },
+      url: "https://www.roblox.com/games/99359783694528/Grow-a-Hack-Empire",
+      image: "https://tr.rbxcdn.com/180DAY-692835e5c987159f22f717c004e63333/768/432/Image/Webp/noFilter"
     },
-    {
-      title: "Product Launch Event",
-      client: "Automotive Company",
-      description: "Virtual car reveal and test drive experience",
-      stats: { players: "1.5M+", rating: "4.9/5", engagement: "22min avg" },
-      url: "https://www.roblox.com/games/product-launch-event",
-      image: "https://images.pexels.com/photos/3822864/pexels-photo-3822864.jpeg?auto=compress&cs=tinysrgb&w=800"
-    }
+    // {
+    //   title: "Product Launch Event",
+    //   client: "Automotive Company",
+    //   description: "Virtual car reveal and test drive experience",
+    //   stats: { players: "1.5M+", rating: "4.9/5", engagement: "22min avg" },
+    //   url: "https://www.roblox.com/games/product-launch-event",
+    //   image: "https://images.pexels.com/photos/3822864/pexels-photo-3822864.jpeg?auto=compress&cs=tinysrgb&w=800"
+    // }
   ];
 
   const services = [
@@ -555,7 +555,7 @@ function App() {
             <p className="text-gray-400 text-lg">Success stories from our portfolio</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             {projects.map((project, i) => (
               <button
                 key={i}
@@ -578,17 +578,17 @@ function App() {
           <div className="bg-gradient-to-br from-[#e2a9f1]/10 to-purple-900/30 border border-white/10 rounded-2xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <div className="text-sm text-[#e2a9f1] font-medium mb-2">CASE STUDY</div>
+                <div className="text-sm text-[#e2a9f1] font-medium mb-2">ROBLOX GAME</div>
                 <h3 className="text-3xl font-bold mb-4">{projects[activeProject].title}</h3>
                 <p className="text-gray-300 mb-6 text-lg">{projects[activeProject].description}</p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-4">
                     <div className="text-2xl font-bold text-[#e2a9f1]">{projects[activeProject].stats.players}</div>
-                    <div className="text-sm text-gray-400">Total Players</div>
+                    <div className="text-sm text-gray-400">Visits</div>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-2xl font-bold text-[#e2a9f1]">{projects[activeProject].stats.rating}</div>
-                    <div className="text-sm text-gray-400">User Rating</div>
+                    <div className="text-sm text-gray-400">Like Rating</div>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-2xl font-bold text-[#e2a9f1]">{projects[activeProject].stats.engagement}</div>
