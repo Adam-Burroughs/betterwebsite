@@ -229,17 +229,21 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {services.map((service, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              "Boost brand awareness",
+              "Engage new audiences",
+              "Drive meaningful user interaction",
+              "Create custom virtual experiences"
+            ].map((item, i) => (
               <div
                 key={i}
                 className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all hover:scale-105 group"
               >
                 <div className="w-12 h-12 bg-[#e2a9f1]/20 rounded-xl flex items-center justify-center mb-4 text-[#e2a9f1] group-hover:bg-[#e2a9f1] group-hover:text-white transition-all">
-                  {service.icon}
+                  <Sparkles className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-bold">{item}</h3>
               </div>
             ))}
           </div>
