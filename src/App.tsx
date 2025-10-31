@@ -312,15 +312,15 @@ function App() {
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>55% of children in the US have a Roblox account</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Average user spends 156 minutes daily on platform</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Users visit platform 4+ times per week on average</div>
                 </li>
               </ul>
@@ -334,15 +334,15 @@ function App() {
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Average session length: 2.6 hours (vs. 30 min on social media)</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>87% user retention rate for branded experiences</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>5-10x longer brand interaction than video ads</div>
                 </li>
               </ul>
@@ -356,15 +356,15 @@ function App() {
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Nike's Nikeland: 25M+ visits in first 5 months</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Gucci Garden: 20M+ visits, generated significant PR value</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Brands report 30-40% increase in brand awareness</div>
                 </li>
               </ul>
@@ -378,15 +378,15 @@ function App() {
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Average cost per engagement: $0.02-0.05</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Organic viral potential reaches millions at no extra cost</div>
                 </li>
                 <li className="flex items-center gap-2">
-                  <div className="text-[#e2a9f1] mt-1">•</div>
+                  <div className="text-[#e2a9f1]">•</div>
                   <div>Real-time analytics and detailed user behavior tracking</div>
                 </li>
               </ul>
