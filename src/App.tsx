@@ -413,7 +413,7 @@ function App() {
               </div>
               <h3 className="text-2xl font-bold mb-3">Proven Track Record</h3>
               <p className="text-gray-400 leading-relaxed">
-                50+ successful projects delivered with 99% client satisfaction rate. Our experiences have been played by over 10 million users worldwide with an average rating of 4.9/5.
+                5+ successful projects delivered with 99% client satisfaction rate. Our experiences have been played by over 150 million users worldwide totalling 1 million favorites.
               </p>
             </div>
 
