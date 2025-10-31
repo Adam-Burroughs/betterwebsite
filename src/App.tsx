@@ -199,9 +199,9 @@ function App() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto">
             {[
-              { value: "50+", label: "Projects Delivered" },
-              { value: "10M+", label: "Total Players" },
-              { value: "4.9/5", label: "Average Rating" },
+              { value: "5+", label: "Projects Delivered" },
+              { value: "150M+", label: "Total Unique Visits" },
+              { value: "1M+", label: "In-game Favorites" },
               { value: "99%", label: "Client Satisfaction" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
