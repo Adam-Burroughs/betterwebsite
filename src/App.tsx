@@ -180,7 +180,7 @@ function App() {
             <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
               We Build
               <span className="bg-gradient-to-r from-[#F469FF] to-pink-400 bg-clip-text text-transparent glow-text"> Experiences </span>
-              That <span className="bg-gradient-to-r from-[#F469FF] to-pink-400 bg-clip-text text-transparent glow-text"> Matter </span>
+              That Matter
             </h1>
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
               Partner with the leading Roblox development studio trusted by global brands,
