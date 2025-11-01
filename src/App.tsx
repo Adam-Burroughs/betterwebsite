@@ -127,29 +127,6 @@ function App() {
     // }
   ];
 
-  const services = [
-    {
-      icon: <Sparkles className="w-6 h-6" />,
-      title: "Brand Activations",
-      description: "Create unforgettable branded experiences that resonate with your target audience in the metaverse."
-    },
-    {
-      icon: <Briefcase className="w-6 h-6" />,
-      title: "Corporate Solutions",
-      description: "Training programs, team building events, and virtual offices tailored for modern businesses."
-    },
-    {
-      icon: <Gamepad2 className="w-6 h-6" />,
-      title: "Custom Game Development",
-      description: "Full-stack Roblox development from concept to launch, optimized for engagement and retention."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Agency Partnerships",
-      description: "White-label solutions and collaborative development for creative and marketing agencies."
-    }
-  ];
-
   return (
     <div className={`min-h-screen bg-black text-white transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       {/* Navigation */}
