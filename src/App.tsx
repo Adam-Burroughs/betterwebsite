@@ -758,7 +758,7 @@ function App() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:hello@experiencestudios.com"
+              href="mailto:contact@solidpathstudios.com"
               className="px-8 py-4 bg-gradient-to-r from-[#F469FF] to-purple-500 rounded-full hover:from-[#F469FF] hover:to-purple-600 transition-all hover:scale-105 font-medium flex items-center gap-2 shadow-lg shadow-[#e2a9f1]/30"
             >
               <Mail className="w-5 h-5" />
@@ -808,7 +808,7 @@ function App() {
             <div>
               <h4 className="font-bold mb-4">Connect</h4>
               <div className="space-y-2 text-sm text-gray-400">
-                <div>hello@experiencestudios.com</div>
+                <div>contact@solidpathstudios.com</div>
                 <div>Twitter</div>
                 <div>LinkedIn</div>
                 <div>Discord</div>
