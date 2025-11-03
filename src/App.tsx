@@ -204,9 +204,6 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">What We Do</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              End-to-end Roblox development services designed for brands, companies, and agencies
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -241,9 +238,6 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Roblox for Your Brand?</h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              The world's most powerful platform for reaching Gen Z and Gen Alpha with unmatched engagement metrics
-            </p>
           </div>
 
           {/* Key Statistics Grid */}
@@ -288,7 +282,7 @@ function App() {
               <Target className="w-12 h-12 text-[#e2a9f1] mb-4" />
               <h3 className="text-2xl font-bold mb-3">Unmatched Audience Reach</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Access 79.5 million daily active users—larger than the population of France. 67% of U.S. users under 16 are on Roblox, making it the #1 platform for reaching the next generation of consumers.
+                Access 110.5 million daily active users larger than the population of the UK and Canada combined. 67% of U.S. users under 16 are on Roblox, making it the #1 platform for reaching the next generation of consumers.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
@@ -297,11 +291,11 @@ function App() {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="text-[#e2a9f1]">•</div>
-                  <div>Average user spends 156 minutes daily on platform</div>
+                  <div>Average user spends 156 minutes daily on the platform</div>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="text-[#e2a9f1]">•</div>
-                  <div>Users visit platform 4+ times per week on average</div>
+                  <div>Users visit Roblox on average 4+ times per week</div>
                 </li>
               </ul>
             </div>
@@ -310,12 +304,12 @@ function App() {
               <Zap className="w-12 h-12 text-[#e2a9f1] mb-4" />
               <h3 className="text-2xl font-bold mb-3">Superior Engagement Metrics</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Roblox experiences achieve engagement rates 3-5x higher than traditional digital advertising. Users don't just view content—they actively participate, creating deeper brand connections.
+                Roblox experiences achieve engagement rates 3-5x higher than traditional digital advertising. Users don't just view content—they actively ingage, creating deeper brand connections.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
                   <div className="text-[#e2a9f1]">•</div>
-                  <div>Average session length: 2.6 hours (vs. 30 min on social media)</div>
+                  <div>Average session length: 2.6 hours (vs. 15 min on TikTok)</div>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="text-[#e2a9f1]">•</div>
@@ -345,7 +339,7 @@ function App() {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="text-[#e2a9f1]">•</div>
-                  <div>Brands report 30-40% increase in brand awareness</div>
+                  <div>Chipotle: 32M+ Visits, and 100K+ promotional codes redeemed</div>
                 </li>
               </ul>
             </div>
@@ -381,9 +375,6 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Why Choose Solidpath Studios?</h2>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              We're not just developers—we're strategic partners with proven expertise in creating high-performing branded experiences
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -428,7 +419,7 @@ function App() {
                 <div>
                   <h4 className="text-xl font-bold mb-2">End-to-End Service</h4>
                   <p className="text-gray-400">
-                    From initial concept and design to development, launch, marketing support, and ongoing optimization—we handle everything so you don't need multiple vendors.
+                    From initial concept and design to development, launch, marketing support, and ongoing optimization, we handle everything.
                   </p>
                 </div>
               </div>
@@ -452,7 +443,7 @@ function App() {
                 <div>
                   <h4 className="text-xl font-bold mb-2">Enterprise-Grade Quality</h4>
                   <p className="text-gray-400">
-                    Rigorous testing, security audits, and compliance checks. Our experiences are built to handle millions of concurrent users without performance issues.
+                    Thorough testing, our experiences are built to handle millions of concurrent users without performance issues.
                   </p>
                 </div>
               </div>
@@ -462,9 +453,9 @@ function App() {
                   <div className="w-12 h-12 bg-gradient-to-br from-[#e2a9f1] to-purple-500 rounded-lg flex items-center justify-center text-xl font-bold shadow-lg shadow-[#e2a9f1]/30">4</div>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Dedicated Account Team</h4>
+                  <h4 className="text-xl font-bold mb-2">Dedicated Team</h4>
                   <p className="text-gray-400">
-                    Direct access to senior developers and strategists. No junior resources or offshore teams—you work directly with experts who understand your business goals.
+                    Work directly with major developers on the platform. You'll collaborate with proven professionals who fully understand your business.
                   </p>
                 </div>
               </div>
@@ -476,7 +467,7 @@ function App() {
                 <div>
                   <h4 className="text-xl font-bold mb-2">Transparent Pricing</h4>
                   <p className="text-gray-400">
-                    Fixed-price packages with no hidden fees. Clear timelines and deliverables in every proposal. Most projects range from $50K-$250K depending on scope and complexity.
+                    Fixed-price packages with no hidden fees. Clear timelines and deliverables in every proposal. Most projects range from $20K-$125K depending on scope and complexity.
                   </p>
                 </div>
               </div>
@@ -502,7 +493,6 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Featured Projects</h2>
-            <p className="text-gray-400 text-lg">Success stories from our portfolio</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -580,7 +570,6 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Our Process</h2>
-            <p className="text-gray-400 text-lg">From concept to launch in 4 simple steps</p>
           </div>
 
           <div className="relative">
@@ -657,25 +646,24 @@ function App() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 glow-text">Frequently Asked Questions (FAQ)</h2>
-            <p className="text-gray-400 text-lg">Everything you need to know about working with us</p>
           </div>
 
           <div className="space-y-4">
             {[
               {
                 question: "How long does it take to develop a Roblox experience?",
-                answer: "Most branded experiences take 6-8 weeks from concept to launch. This includes design, development, testing, and deployment. Complex projects with advanced features may take 10-12 weeks. We provide detailed timelines during the discovery phase."
+                answer: "Most branded experiences take 6-8 weeks from concept to launch. This includes design, development, testing, and deployment. Complex projects with advanced features may take 10+ weeks. We provide detailed timelines during the discovery phase."
               },
               {
                 question: "What's the typical investment range for a Roblox project?",
-                answer: "Projects typically range from $50K to $250K depending on scope, complexity, and features. This includes full design, development, testing, launch support, and initial optimization. We provide transparent, fixed-price proposals with no hidden fees."
+                answer: "Projects typically range from $20K to $125K depending on scope, complexity, and features. This includes full design, development, testing, launch support, and initial optimization. We provide transparent, fixed-price proposals with no hidden fees."
               },
               {
-                question: "Do you provide ongoing support after launch?",
+                question: "Does Solidpath provide ongoing support after launch?",
                 answer: "Yes! We offer comprehensive post-launch support including bug fixes, performance monitoring, content updates, and seasonal events. Most clients opt for our ongoing optimization package to continuously improve engagement and ROI."
               },
               {
-                question: "How do you measure success and ROI?",
+                question: "How does Solidpath measure success and ROI?",
                 answer: "We track key metrics including total visits, concurrent players, session duration, retention rates, conversion funnels, and user engagement. You'll receive a real-time analytics dashboard and monthly performance reports with actionable insights."
               },
               {
@@ -683,7 +671,7 @@ function App() {
                 answer: "Absolutely! We provide launch strategy, Roblox platform optimization, influencer outreach support, and promotional campaigns. We can also integrate with your existing marketing channels and coordinate with your PR team."
               },
               {
-                question: "What makes your studio different from other Roblox developers?",
+                question: "What makes your Solidpath different from other Roblox developers?",
                 answer: "We specialize in branded experiences for enterprises and agencies. Unlike general game developers, we understand marketing objectives, corporate compliance, and brand guidelines. Our team includes former brand marketers, not just developers."
               },
               {
@@ -765,38 +753,39 @@ function App() {
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div>Brand Activations</div>
-                <div>Corporate Solutions</div>
-                <div>Game Development</div>
-                <div>Agency Partnerships</div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div>About Us</div>
-                <div>Our Work</div>
-                <div>Careers</div>
-                <div>Blog</div>
-              </div>
-            </div>
-            <div>
               <h4 className="font-bold mb-4">Connect</h4>
               <div className="space-y-2 text-sm text-gray-400">
-                <div>contact@solidpathstudios.com</div>
-                <div>Twitter</div>
-                <div>LinkedIn</div>
-                <div>Discord</div>
+                <a
+                  href="mailto:contact@solidpathstudios.com"
+                  className="hover:text-white transition"
+                >
+                  contact@solidpathstudios.com
+                </a>
+                <a
+                  href="https://twitter.com/solidpathstudios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:text-white transition"
+                >
+                  Twitter
+                </a>
+                <a
+                  href="https://linkedin.com/company/solidpathstudios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:text-white transition"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>
           <div className="pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-            © 2025 Experience Studios. All rights reserved.
+            © 2025 Solidpath Studios. All rights reserved.
           </div>
         </div>
       </footer>
+
     </div>
   );
 }
