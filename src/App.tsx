@@ -467,7 +467,7 @@ function App() {
                 <div>
                   <h4 className="text-xl font-bold mb-2">Transparent Pricing</h4>
                   <p className="text-gray-400">
-                    Fixed-price packages with no hidden fees. Clear timelines and deliverables in every proposal. Most projects range from $20K-$125K depending on scope and complexity.
+                    Fixed-price packages with no hidden fees. Clear timelines and deliverables in every proposal. Project pricing is tailored to each client depending on complexity & budget.
                   </p>
                 </div>
               </div>
@@ -656,7 +656,7 @@ function App() {
               },
               {
                 question: "What's the typical investment range for a Roblox project?",
-                answer: "Projects typically range from $20K to $125K depending on scope, complexity, and features. This includes full design, development, testing, launch support, and initial optimization. We provide transparent, fixed-price proposals with no hidden fees."
+                answer: "Project pricing is tailored to each client depending on complexity & budget. Prices includes full design, development, testing, launch support, and initial optimization. We provide transparent, fixed-price proposals with no hidden fees."
               },
               {
                 question: "Does Solidpath provide ongoing support after launch?",
@@ -671,15 +671,15 @@ function App() {
                 answer: "Absolutely! We provide launch strategy, Roblox platform optimization, influencer outreach support, and promotional campaigns. We can also integrate with your existing marketing channels and coordinate with your PR team."
               },
               {
-                question: "What makes your Solidpath different from other Roblox developers?",
-                answer: "We specialize in branded experiences for enterprises and agencies. Unlike general game developers, we understand marketing objectives, corporate compliance, and brand guidelines. Our team includes former brand marketers, not just developers."
+                question: "What makes Solidpath different from other Roblox studios?",
+                answer: "We specialize in branded experiences for companies, influencers, and products. Unlike general game developers, we understand marketing objectives, corporate compliance, and brand guidelines."
               },
               {
-                question: "Do we own the intellectual property of the experience?",
-                answer: "Yes, you retain all IP rights to your branded experience. We provide full documentation, source code access, and can transfer everything to your internal team if needed. Your brand assets and custom content are 100% yours."
+                question: "who owns the intellectual property of the experience?",
+                answer: "You retain all IP rights to your branded experience. We provide full documentation, source code access, and can transfer everything to your internal team if needed. Your brand assets and custom content are 100% yours."
               },
               {
-                question: "What if we need to make changes after launch?",
+                question: "What if changes are needed after launch?",
                 answer: "Changes are easy! Roblox allows for live updates without downtime. Minor updates are included in your support package. Larger feature additions can be scoped as separate phases. We're here for the long term."
               }
             ].map((faq, i) => (
