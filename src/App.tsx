@@ -117,6 +117,14 @@ function App() {
       url: "https://www.roblox.com/games/99359783694528/Grow-a-Hack-Empire",
       image: "https://tr.rbxcdn.com/180DAY-692835e5c987159f22f717c004e63333/768/432/Image/Webp/noFilter"
     },
+    // {
+    //   title: "Product Launch Event",
+    //   client: "Automotive Company",
+    //   description: "Virtual car reveal and test drive experience",
+    //   stats: { players: "1.5M+", rating: "4.9/5", engagement: "22min avg" },
+    //   url: "https://www.roblox.com/games/product-launch-event",
+    //   image: "https://images.pexels.com/photos/3822864/pexels-photo-3822864.jpeg?auto=compress&cs=tinysrgb&w=800"
+    // }
   ];
 
   return (
@@ -155,7 +163,7 @@ function App() {
               That Matter
             </h1>
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
-              Partner with a Roblox development studio trusted by global brands,
+              Partner with the leading Roblox development studio trusted by global brands,
               corporations, and agencies to create immersive experiences that drive engagement and results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
