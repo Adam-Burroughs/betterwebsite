@@ -163,7 +163,7 @@ function App() {
               That Matter
             </h1>
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
-              Partner with a trusted Roblox development studio trusted by global brands,
+              Partner with a Roblox development studio trusted by global brands,
               corporations, and agencies to create immersive experiences that drive engagement and results.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
